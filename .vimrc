@@ -1,5 +1,5 @@
 " Author:      Dylan Uecker
-" Last Change: 2022 Mar 31
+" Last Change: 2022 Apr 12 
 
 syntax on                   " enable syntax highlighting
 filetype plugin indent on   " allow file type specific options
@@ -11,7 +11,7 @@ set tabstop=4               " tab width is 4 spaces
 set shiftwidth=4            " indent also with 4 spaces
 set bs=indent,eol,start     " make my backspace work again!
 set colorcolumn=120         " vertical ruler for 120 characters per line
-set spell                   " turn spellcheck on
+"set spell                   " turn spellcheck on
 
 " use jk to enter normal mode from insert mode 
 inoremap jk <ESC>l
