@@ -1,7 +1,6 @@
 # dotfiles
 
-After cloning, copy .vimrc and .vim/ to home directory. I think you only want the first couple lines of the .bashrc, so run diff and add only those (the rest may be machine specific).
+## TODO:
+-Default system editor
+-Better way than copying each file -- symlinks?
 
-TODO: automate this process with a script. Default system editor.
-
-Idea -- alias all files to point into repo.
