@@ -6,6 +6,9 @@ set -o vi
 bind '"jk":"\el"'
 bind -m vi-command '"v": ""'
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
