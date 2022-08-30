@@ -1,19 +1,19 @@
-#! /bin/bash
+#!/bin/bash
 
-cp .vimrc ~/
-echo "Copied .vimrc to home directory"
+sudo apt update
+echo
+sudo apt upgrade
+echo
+sudo apt install vim -y
+echo
+sudo apt install git -y
+echo
 
-cp -r .vim ~/
-echo "Copied .vim directory to home directory"
+cp -a to_home/. ~/
+echo "Copied to_home to home"
 
-cp .bashrc ~/
-echo "Copied .bashrc to home directory"
-
+git config --global user.email "dylan.uecker@gmail.com"
 git config --global user.name "Dylan Uecker"
-git config --global user.email dylan.uecker@gmail.com
-git config --global core.editor vim
-echo -e "Bare minimum git configurations made\n"
-
-apt update
-apt upgrade
+git config --global core.editor "vim"
+echo "Bare minimum git configurations made"
 
