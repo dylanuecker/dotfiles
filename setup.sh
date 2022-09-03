@@ -13,8 +13,6 @@ cp -a dotfiles/. ~/
 mkdir -p ~/.hidden/
 cp settings/user-dirs.dirs ~/.config/
 
-mv ~/snap/ ~/.snap/
-
 git config --global user.email "dylan.uecker@gmail.com"
 git config --global user.name "Dylan Uecker"
 git config --global core.editor "vim"
