@@ -10,6 +10,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 alias logout="gnome-session-quit"
+alias lock="xdg-screensaver lock"
 
 # If not running interactively, don't do anything
 case $- in
