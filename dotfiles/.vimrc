@@ -1,5 +1,5 @@
 " Author:      Dylan Uecker
-" Last Change: 2022 Aug 12
+" Last Change: 2022 Sep 4 
 
 syntax on                   " enable syntax highlighting
 filetype plugin indent on   " allow file type specific options
@@ -15,6 +15,7 @@ set splitbelow              " horizontal splits
 set splitright              " vertical splits
 "set spell                   " turn spellcheck on
 set nowrap                  " hate line wrapping
+set formatoptions-=cro      " stop continuing comments
 
 " use jk to enter normal mode from insert mode 
 inoremap jk <ESC>l
