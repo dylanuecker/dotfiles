@@ -16,6 +16,7 @@ set splitright              " vertical splits
 "set spell                   " turn spellcheck on
 set nowrap                  " hate line wrapping
 set formatoptions-=cro      " stop continuing comments
+set iskeyword-=_            " ease of mobility using lower_case_snake_case
 
 " use jk to enter normal mode from insert mode 
 inoremap jk <ESC>l
