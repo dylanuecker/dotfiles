@@ -1,5 +1,5 @@
 " Author:      Dylan Uecker
-" Last Change: 2022 Sep 4 
+" Last Change: 2022 Sep 6
 
 syntax on                   " enable syntax highlighting
 filetype plugin indent on   " allow file type specific options
@@ -16,7 +16,7 @@ set splitright              " vertical splits
 "set spell                   " turn spellcheck on
 set nowrap                  " hate line wrapping
 set formatoptions-=cro      " stop continuing comments
-set iskeyword-=_            " ease of mobility using lower_case_snake_case
+"set iskeyword-=_            " ease of mobility using lower_case_snake_case
 
 " use jk to enter normal mode from insert mode 
 inoremap jk <ESC>l
@@ -44,6 +44,7 @@ highlight User5 ctermbg=blue ctermfg=black
 highlight User6 ctermbg=magenta ctermfg=black
 highlight User7 ctermbg=yellow ctermfg=black
 highlight User8 ctermbg=red ctermfg=black
+highlight User9 ctermbg=black ctermfg=black
 
 " many more than this, should be adding when encountered    
 let s:modes = {
@@ -54,22 +55,38 @@ let s:modes = {
 			\ "\<C-V>"  :  ['%6*', 'VBLOCK'],
 			\ 'R'       :  ['%7*', 'REPLCE'],
 			\ 'c'       :  ['%8*', 'COMMND'],
-			\ 'default' :  ['%*' , 'UNKNWN'],
+			\ 't'       :  ['%9*', 'TERMNL'],
 			\}
 
+let s:default = ['%*' , '      ']
+
 function MyStatusLine()
-	let l:statusline = ""                                                    " begin building the status line
-	let l:statusline ..= get(s:modes,mode(),'default')[0]                    " set appropriate color for the current mode
-	let l:statusline ..= " " .. get(s:modes, mode(), 'default')[1]           " set text to current mode
-	let l:statusline ..= " %1* %F "                                          " display full path and the filename
-	let l:statusline ..= "%2* %{&spell == 0? '' : '[Spell]'}"                " spellcheck flag
-	let l:statusline ..= "%h%w%m%r "                                         " help, preview, modified, and read only flag
-	let l:statusline ..= "%="                                                " right align everything else now
-	let l:statusline ..= "%{&fileformat} | "                                 " file format with | separator
-	let l:statusline ..= "%{&fileencoding? &fileencoding : &encoding} | "    " file encoding with | separator
-	let l:statusline ..= "%{&filetype == ''? 'no\ ft' : &filetype} "         " file type (no ft is displayed if none)
-	let l:statusline ..= "%1* %3p%% "                                        " percentage way through file 
-	let l:statusline ..= "%3* %4l:%-3v"                                      " line number followed by virtual column number
+	let l:statusline = ""                                                     " begin building the status line
+	let l:focused = g:statusline_winid == win_getid(winnr())                  " is current window in focus
+
+	if l:focused
+		let l:statusline ..= get(s:modes,mode(),s:default)[0]                 " set appropriate color for the current mode
+		let l:statusline ..= " " .. get(s:modes, mode(), s:default)[1]        " set text to current mode
+	else
+		let l:statusline ..= " " .. s:default[1]                              " equal spacing	
+	endif
+
+	let l:statusline ..= " %1* %F "											  " display full path and the filename
+	let l:statusline ..= "%2* %{&spell == 0? '' : '[Spell]'}"				  " spellcheck flag
+	let l:statusline ..= "%h%w%m%r "										  " help, preview, modified, and read only flag
+	let l:statusline ..= "%="												  " right align everything else now
+	let l:statusline ..= "%{&fileformat} | "								  " file format with | separator
+	let l:statusline ..= "%{&fileencoding? &fileencoding : &encoding} | "	  " file encoding with | separator
+	let l:statusline ..= "%{&filetype == ''? 'no\ ft' : &filetype} "		  " file type (no ft is displayed if none)
+
+	if l:focused
+		let l:statusline ..= "%1* %3p%% "                                     " percentage way through file 
+		let l:statusline ..= "%3* %4l:%-3v"                                   " line number followed by virtual column number
+	else
+		let l:statusline ..= "      "                                         " equal spacing
+		let l:statusline ..= "         "                                      " equal spacing
+	endif
+
 	return l:statusline
 endfunction
 
