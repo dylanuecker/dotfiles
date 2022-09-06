@@ -10,7 +10,6 @@ set noshowmatch             " stop brief jump on highlight match
 set tabstop=4               " tab width is 4 spaces
 set shiftwidth=4            " indent also with 4 spaces
 set bs=indent,eol,start     " make my backspace work again!
-set colorcolumn=120         " vertical ruler for 120 characters per line
 set splitbelow              " horizontal splits
 set splitright              " vertical splits
 "set spell                   " turn spellcheck on
@@ -27,17 +26,25 @@ for key in ['<Down>', '<Left>', '<Right>', '<Up>']
 	exec 'noremap!' key '<Nop>'
 endfor
 
-" ~./vim/colors
+" ~/.vim/colors
 if (has("termguicolors")) " for vim >= 8.0
 	set termguicolors
 endif
 colorscheme tender 
 
+set colorcolumn=120         " vertical ruler for 120 characters per line
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set colorcolumn=120
+    autocmd WinLeave * set colorcolumn=0
+augroup END
 " set color of vertical ruler
-highlight ColorColumn ctermbg=black guibg=#2E3436
+highlight ColorColumn ctermbg=black guibg=#323232
+
 " set colors for the status line
+highlight StatusLine ctermbg=black guibg=#666666
 highlight User1 ctermbg=darkgrey 
-highlight User2 ctermbg=black guibg=#2E3436
+highlight User2 ctermbg=black guibg=#323232
 highlight User3 ctermbg=grey ctermfg=black
 highlight User4 ctermbg=green ctermfg=black
 highlight User5 ctermbg=blue ctermfg=black
@@ -66,25 +73,20 @@ function MyStatusLine()
 
 	if l:focused
 		let l:statusline ..= get(s:modes,mode(),s:default)[0]                 " set appropriate color for the current mode
-		let l:statusline ..= " " .. get(s:modes, mode(), s:default)[1]        " set text to current mode
-	else
-		let l:statusline ..= " " .. s:default[1]                              " equal spacing	
+		let l:statusline ..= " " .. get(s:modes, mode(), s:default)[1] .. " " " set text to current mode
 	endif
 
-	let l:statusline ..= " %1* %F "											  " display full path and the filename
+	let l:statusline ..= "%1* %F "											  " display full path and the filename
 	let l:statusline ..= "%2* %{&spell == 0? '' : '[Spell]'}"				  " spellcheck flag
 	let l:statusline ..= "%h%w%m%r "										  " help, preview, modified, and read only flag
-	let l:statusline ..= "%="												  " right align everything else now
-	let l:statusline ..= "%{&fileformat} | "								  " file format with | separator
-	let l:statusline ..= "%{&fileencoding? &fileencoding : &encoding} | "	  " file encoding with | separator
-	let l:statusline ..= "%{&filetype == ''? 'no\ ft' : &filetype} "		  " file type (no ft is displayed if none)
 
 	if l:focused
+		let l:statusline ..= "%="											  " right align everything else now
+		let l:statusline ..= "%{&fileformat} | "							  " file format with | separator
+		let l:statusline ..= "%{&fileencoding? &fileencoding : &encoding} | " " file encoding with | separator
+		let l:statusline ..= "%{&filetype == ''? 'no\ ft' : &filetype} "	  " file type (no ft is displayed if none)
 		let l:statusline ..= "%1* %3p%% "                                     " percentage way through file 
 		let l:statusline ..= "%3* %4l:%-3v"                                   " line number followed by virtual column number
-	else
-		let l:statusline ..= "      "                                         " equal spacing
-		let l:statusline ..= "         "                                      " equal spacing
 	endif
 
 	return l:statusline
