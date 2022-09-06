@@ -42,7 +42,7 @@ augroup END
 highlight ColorColumn ctermbg=black guibg=#323232
 
 " set colors for the status line
-highlight StatusLine ctermbg=black guibg=#666666
+highlight StatusLine ctermbg=black guibg=#444444
 highlight User1 ctermbg=darkgrey 
 highlight User2 ctermbg=black guibg=#323232
 highlight User3 ctermbg=grey ctermfg=black
