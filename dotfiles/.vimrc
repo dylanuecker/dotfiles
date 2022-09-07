@@ -26,32 +26,32 @@ for key in ['<Down>', '<Left>', '<Right>', '<Up>']
 	exec 'noremap!' key '<Nop>'
 endfor
 
-" ~/.vim/colors
-if (has("termguicolors")) " for vim >= 8.0
-	set termguicolors
-endif
 colorscheme tender 
 
-set colorcolumn=120         " vertical ruler for 120 characters per line
+setlocal colorcolumn=120         " vertical ruler for 120 characters per line
 augroup BgHighlight
     autocmd!
-    autocmd WinEnter * set colorcolumn=120
-    autocmd WinLeave * set colorcolumn=0
+    autocmd WinEnter * if get(getwininfo(win_getid())[0], 'terminal') != '1' | setlocal colorcolumn=120 " don't set for terminal
+    autocmd WinLeave * setlocal colorcolumn=0                                                           " only one color column shown at a time
 augroup END
 " set color of vertical ruler
-highlight ColorColumn ctermbg=black guibg=#323232
+highlight ColorColumn ctermbg=black
 
 " set colors for the status line
-highlight StatusLine ctermbg=black guibg=#444444
-highlight User1 ctermbg=darkgrey 
-highlight User2 ctermbg=black guibg=#323232
+" 238 to remove the annoying singular column between vertical breaks
+" 235 to "hide" the status line in terminal mode
+highlight StatusLine ctermbg=238
+highlight StatusLineTerm ctermbg=235
+highlight StatusLineTermNC ctermbg=235
+
+highlight User1 ctermbg=darkgrey
+highlight User2 ctermbg=black
 highlight User3 ctermbg=grey ctermfg=black
 highlight User4 ctermbg=green ctermfg=black
 highlight User5 ctermbg=blue ctermfg=black
 highlight User6 ctermbg=magenta ctermfg=black
 highlight User7 ctermbg=yellow ctermfg=black
 highlight User8 ctermbg=red ctermfg=black
-highlight User9 ctermbg=black ctermfg=black
 
 " many more than this, should be adding when encountered    
 let s:modes = {
@@ -62,23 +62,32 @@ let s:modes = {
 			\ "\<C-V>"  :  ['%6*', 'VBLOCK'],
 			\ 'R'       :  ['%7*', 'REPLCE'],
 			\ 'c'       :  ['%8*', 'COMMND'],
-			\ 't'       :  ['%9*', 'TERMNL'],
 			\}
 
 let s:default = ['%*' , '      ']
 
+function GetColorAndMode()
+	let l:colorAndMode = ""
+	let l:colorAndMode ..= get(s:modes, mode(), s:default)[0]                 " set appropriate color for the current mode
+	let l:colorAndMode ..= " " .. get(s:modes, mode(), s:default)[1] .. " "   " set text to current mode
+	return l:colorAndMode
+endfunction
+
 function MyStatusLine()
 	let l:statusline = ""                                                     " begin building the status line
-	let l:focused = g:statusline_winid == win_getid(winnr())                  " is current window in focus
+	let l:focused = g:statusline_winid == win_getid()                         " is current window in focus
 
 	if l:focused
-		let l:statusline ..= get(s:modes,mode(),s:default)[0]                 " set appropriate color for the current mode
-		let l:statusline ..= " " .. get(s:modes, mode(), s:default)[1] .. " " " set text to current mode
+		let l:statusline ..= GetColorAndMode()                                " show current mode in different colors
+		let l:statusline ..= "%1* "                                           " set color for filename (focused window only)
 	endif
 
-	let l:statusline ..= "%1* %F "											  " display full path and the filename
-	let l:statusline ..= "%2* %{&spell == 0? '' : '[Spell]'}"				  " spellcheck flag
-	let l:statusline ..= "%h%w%m%r "										  " help, preview, modified, and read only flag
+	let l:statusline ..= "%F "											      " display full path and the filename
+	if l:focused
+		let l:statusline ..= "%2*"                                            " preserve smoothness of statuslinenc
+	endif
+	let l:statusline ..= " %{&spell == 0? '' : '[Spell]'}"				      " spellcheck flag
+	let l:statusline ..= "%h%w%m%r"										      " help, preview, modified, and read only flag
 
 	if l:focused
 		let l:statusline ..= "%="											  " right align everything else now
@@ -89,13 +98,26 @@ function MyStatusLine()
 		let l:statusline ..= "%3* %4l:%-3v"                                   " line number followed by virtual column number
 	endif
 
+	let l:statusline ..= "%*"                                                 " set rest of statusline to background
+
+	return l:statusline
+endfunction
+
+function TerminalStatusLine()
+	let l:statusline = ""
+	let l:focused = g:statusline_winid == win_getid(winnr())                  " is current window in focus
+	if l:focused
+		let l:statusline ..= GetColorAndMode()                                " show current mode in different color
+	endif
+	let l:statusline ..= "%*"                                                 " set rest of statusline to background
 	return l:statusline
 endfunction
 
 augroup statusline
 	" remove all autocommands from statusline group
 	autocmd!                               
-	autocmd CmdlineEnter * redrawstatus    " redraw status line when entering command mode
+	autocmd CmdlineEnter * redrawstatus             " redraw status line when entering command mode
+	autocmd TerminalWinOpen * setlocal statusline=%!TerminalStatusLine()
 augroup END
 
 set noshowmode                             " mode already displayed in status line
