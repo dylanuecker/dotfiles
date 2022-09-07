@@ -28,11 +28,14 @@ endfor
 
 colorscheme tender 
 
-setlocal colorcolumn=120         " vertical ruler for 120 characters per line
+" vertical ruler for 120 characters per line
 augroup BgHighlight
     autocmd!
-    autocmd WinEnter * if get(getwininfo(win_getid())[0], 'terminal') != '1' | setlocal colorcolumn=120 " don't set for terminal
-    autocmd WinLeave * setlocal colorcolumn=0                                                           " only one color column shown at a time
+	autocmd WinEnter,BufWinEnter *
+				\ if get(getwininfo(win_getid())[0], 'terminal') != '1'
+				\ | setlocal colorcolumn=120
+				\ | endif	                                                    " don't show for terminal
+    autocmd WinLeave,TerminalOpen * setlocal colorcolumn=0                      " only one color column shown at a time
 augroup END
 " set color of vertical ruler
 highlight ColorColumn ctermbg=black
