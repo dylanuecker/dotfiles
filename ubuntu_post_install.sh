@@ -12,9 +12,9 @@ cp -a dotfiles/. ~/
 
 mkdir -p ~/.hidden/
 mv ~/Desktop/ ~/Documents/ ~/Downloads/ ~/Music/ ~/Pictures/ ~/Public/ ~/Templates/ ~/Videos/ ~/.hidden/
-cp gnomefiles/user-dirs.dirs ~/.config/
+cp gnome-files/user-dirs.dirs ~/.config/
 
-dconf load /org/gnome/terminal/ < gnomefiles/gnome_terminal_settings.txt
+dconf load /org/gnome/terminal/ < gnome-files/gnome_terminal_settings.txt
 
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
