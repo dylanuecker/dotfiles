@@ -26,6 +26,9 @@ for key in ['<Down>', '<Left>', '<Right>', '<Up>']
 	exec 'noremap!' key '<Nop>'
 endfor
 
+" command to export to pdf
+command Pdf hardcopy > %.ps | !ps2pdf %.ps && rm %.ps
+
 colorscheme tender 
 
 " vertical ruler for 120 characters per line
