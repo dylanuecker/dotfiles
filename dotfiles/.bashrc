@@ -11,6 +11,7 @@ export EDITOR="$VISUAL"
 
 alias logout="gnome-session-quit"
 alias lock="xdg-screensaver lock"
+alias search="grep -rin --include=\*.{c,h}"
 
 # If not running interactively, don't do anything
 case $- in
