@@ -20,6 +20,6 @@ gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 gsettings set org.gnome.shell.extensions.dash-to-dock intellihide false
 
-git config --global user.email "dylan.uecker@gmail.com"
+git config --global user.email "55552716+dylanuecker@users.noreply.github.com"
 git config --global user.name "Dylan Uecker"
 git config --global core.editor "vim"
