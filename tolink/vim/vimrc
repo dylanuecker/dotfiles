@@ -1,5 +1,7 @@
 " Author:      Dylan Uecker
-" Last Change: 2022 Sep 6
+" Last Change: 2022 Jan 16
+
+" Renaming .vimrc to vimrc, as will be placed in .vim folder
 
 syntax on                   " enable syntax highlighting
 filetype plugin indent on   " allow file type specific options

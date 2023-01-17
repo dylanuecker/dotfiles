@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for file in tolink/*
+do
+	justfile=${file#tolink/}
+	ln -sf ~/dotfiles/tolink/$justfile ~/.$justfile
+	echo "created symlink for $justfile"
+done

@@ -1,0 +1,20 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias la='ls -A'
+
+BOLD=$(tput bold)         # bold
+RESET=$(tput sgr0)        # turn off all attributes
+PRIMARY=$(tput setaf 4)   # light blue
+SECONDARY=$(tput setaf 7) # white
+PS1='\[$BOLD\]\[$PRIMARY\]\u@\h\[$SECONDARY\] \w \$\[$RESET\] '
+
+set -o vi
+bind '"jk":"\el"'
+bind -m vi-command '"v": ""'
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+source /usr/share/bash-completion/bash_completion
