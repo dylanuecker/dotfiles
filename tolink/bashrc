@@ -17,4 +17,6 @@ bind -m vi-command '"v": ""'
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+export LESSHISTFILE=-
+
 source /usr/share/bash-completion/bash_completion
