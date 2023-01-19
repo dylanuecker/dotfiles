@@ -1,5 +1,5 @@
 " Author:      Dylan Uecker
-" Last Change: 2022 Jan 16
+" Last Change: 2022 Jan 18
 
 " Renaming .vimrc to vimrc, as will be placed in .vim folder
 
@@ -60,6 +60,9 @@ highlight User5 ctermbg=blue ctermfg=black
 highlight User6 ctermbg=magenta ctermfg=black
 highlight User7 ctermbg=yellow ctermfg=black
 highlight User8 ctermbg=red ctermfg=black
+
+" make transparent
+highlight Normal ctermbg=None
 
 " many more than this, should be adding when encountered    
 let s:modes = {
