@@ -1,8 +1,15 @@
 #!/bin/bash
 
-for file in tolink/*
+for file in home/*
 do
-	justfile=${file#tolink/}
-	ln -sfT ~/dotfiles/tolink/$justfile ~/.$justfile
-	echo "created symlink for .$justfile"
+	justfile=${file#home/}
+	ln -sfT ~/dotfiles/home/$justfile ~/.$justfile
+	echo "created symlink for ~/.$justfile"
+done
+
+for file in config/*
+do
+	justfile=${file#config/}
+	ln -sfT ~/dotfiles/config/$justfile ~/.config/$justfile
+	echo "created symlink for ~/.config/$justfile"
 done

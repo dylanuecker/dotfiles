@@ -1,0 +1,21 @@
+#!/bin/bash
+
+xsetroot -cursor_name left_ptr
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d I II III IV V
+
+#bspc config border_width         2
+bspc config window_gap           10
+
+bspc config automatic_scheme     alternate
+
+#bspc config split_ratio          0.52
+#bspc config borderless_monocle   true
+#bspc config gapless_monocle      true
+
+# add rule (s) for firefox, spotify, ...
+
+~/dotfiles/wallpaper/fehbg &
+~/.config/polybar/launch.sh
+picom -b
