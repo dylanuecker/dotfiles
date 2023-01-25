@@ -1,9 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias la='ls -A'
-
 BOLD=$(tput bold)         # bold
 RESET=$(tput sgr0)        # turn off all attributes
 PRIMARY=$(tput setaf 4)   # light blue
@@ -16,7 +13,12 @@ bind -m vi-command '"v": ""'
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
 export LESSHISTFILE=-
 
 source /usr/share/bash-completion/bash_completion
+
+alias ls='ls --color=auto'
+alias la='ls -A'
+alias poweroff='sudo poweroff'
+alias reboot='sudo reboot'
+alias lock='slock'
