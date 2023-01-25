@@ -19,7 +19,7 @@ XF86MonBrightness{Up,Down}
     brightnessctl set {+10%,10%-}
 
 # lock screen
-super + l
+super + shift + l
     slock
 
 #
