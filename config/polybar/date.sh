@@ -15,9 +15,9 @@ trap "toggle" USR1
 
 while true; do
 	if [ $t -eq 0 ]; then
-		date
+		date +%-m/%-d/%Y\ %-l:%M\ %p
 	else
-		date --rfc-3339=seconds
+		date +%-m/%-d/%Y\ %-l:%M:%S\ %p
 	fi
 	sleep 1 &
 	sleep_pid=$!
