@@ -23,7 +23,7 @@ super + semicolon
     slock
 
 super + shift + b
-    polybar-msg cmd hide
+    /home/dylan/.config/polybar/toggle.sh
 # ksuperkey?
 
 #

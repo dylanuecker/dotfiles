@@ -5,16 +5,11 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V
 
-#bspc config border_width         2
-bspc config window_gap           10
-
-bspc config automatic_scheme     alternate
-
-#bspc config split_ratio          0.52
-#bspc config borderless_monocle   true
-#bspc config gapless_monocle      true
-
-# add rule (s) for firefox, spotify, ...
+bspc config window_gap          10
+bspc config automatic_scheme    alternate
+bspc config single_monocle		true # set to monocle layout if only one window
+bspc config borderless_monocle	true # then won't see the default grey outline for focused window
+bspc config gapless_monocle		true # no capes (gaps)
 
 picom -b
 ~/dotfiles/wallpaper/fehbg &
