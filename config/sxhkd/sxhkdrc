@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-    rofi -show drun -show-icons -display-drun '' -theme-str 'textbox-prompt-colon \{enabled : false;\}'
+    rofi -show drun -show-icons -display-drun ''
 
 # sxhkd reload config files
 super + Escape
@@ -19,8 +19,12 @@ XF86MonBrightness{Up,Down}
     brightnessctl set {+10%,10%-}
 
 # lock screen
-super + shift + l
+super + semicolon
     slock
+
+super + shift + b
+    polybar-msg cmd hide
+# ksuperkey?
 
 #
 # bspwm hotkeys
