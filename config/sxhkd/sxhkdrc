@@ -18,6 +18,14 @@ super + Escape
 XF86MonBrightness{Up,Down}
     brightnessctl set {+10%,10%-}
 
+XF86AudioMute
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+XF86Audio{LowerVolume,RaiseVolume}
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%{-,+}
+
+# TODO XF86Audio{AudioPrev,AudioPlay,AudioNext}
+
 # lock screen
 super + semicolon
     slock
