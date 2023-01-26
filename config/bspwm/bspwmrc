@@ -16,6 +16,7 @@ bspc config automatic_scheme     alternate
 
 # add rule (s) for firefox, spotify, ...
 
-~/dotfiles/wallpaper/fehbg &
-~/.config/polybar/launch.sh
 picom -b
+~/dotfiles/wallpaper/fehbg &
+nm-applet &
+~/.config/polybar/launch.sh
