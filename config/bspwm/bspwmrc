@@ -3,7 +3,7 @@
 xsetroot -cursor_name left_ptr
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d A B C D E
+bspc monitor -d 1 2 3 4 5
 
 bspc config window_gap          10
 bspc config automatic_scheme    alternate

@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ -f /tmp/polybarhidden ]; then 
 	polybar-msg cmd show 
-	bspc config top_padding 32
+	bspc config top_padding 21
 	#bspc config gapless_monocle false
 	rm /tmp/polybarhidden 
 else 
