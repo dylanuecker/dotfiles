@@ -19,10 +19,13 @@ XF86MonBrightness{Up,Down}
     brightnessctl set {+10%,10%-}
 
 XF86AudioMute
-    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && \
+	polybar-msg action "#volume.hook.0"
 
 XF86Audio{LowerVolume,RaiseVolume}
-    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%{-,+}
+	wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && \
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%{-,+} && \ 
+    polybar-msg action "#volume.hook.0"
 
 # TODO XF86Audio{AudioPrev,AudioPlay,AudioNext}
 
