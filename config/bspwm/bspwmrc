@@ -13,5 +13,4 @@ bspc config gapless_monocle		true # no capes (gaps)
 
 picom -b
 ~/dotfiles/wallpaper/fehbg &
-nm-applet &
 ~/.config/polybar/launch.sh
