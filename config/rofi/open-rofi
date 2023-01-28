@@ -1,10 +1,16 @@
 #!/bin/bash
 
 modes="drun,powermenu:/home/dylan/.config/rofi/rofi-power-menu"
-options="-modes \"$modes\" -sidebar-mode -show-icons -display-drun  "
+options="-modes \"$modes\" -show-icons -display-drun "
+
+# TODO check if polybar is toggled and offset rofi accordingly
+# too lazy (lazarus), but should be pretty easy
 
 if [ "$1" = "drun" ]; then
-	rofi -show drun $options
+	rofi -show drun $options \
+		-theme-str 'window { location: north; x-offset: 0px; y-offset: 21px; height: 14%; width: 20%; }'
 elif [ "$1" = "powermenu" ]; then
-	rofi -show powermenu $options
+	rofi -show powermenu $options \
+		-theme-str 'inputbar { enabled: false; }' \
+		-theme-str 'window { location: north; x-offset: 17px; y-offset: 21px; height: 11%; width: 8%; }'
 fi

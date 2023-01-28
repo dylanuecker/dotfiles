@@ -10,7 +10,7 @@
     lightbg:                     rgba ( 238, 232, 213, 100 % );
     selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
     background:                  rgba ( 28, 27, 34, 70 % );
-    normal-background:           rgba ( 28, 27, 34, 30 % );
+    normal-background:           rgba ( 28, 27, 34, 00 % );
     lightfg:                     rgba ( 88, 104, 117, 100 % );
     selected-normal-background:  rgba ( 129, 162, 190, 70 % );
     border-color:                rgba ( 124, 131, 137, 100 % );
@@ -24,9 +24,10 @@
 }
 window {
     background-color: @background;
-    border:           1;
+    border:           0;
     padding:          5;
 }
+
 mainbox {
     border:  0;
     padding: 0;
@@ -41,10 +42,10 @@ textbox {
 }
 listview {
     fixed-height: 0;
-    border:       2px 0px 0px ;
+    border:       0px 0px 0px ;
     border-color: @separatorcolor;
     spacing:      2px ;
-    scrollbar:    true;
+    scrollbar:    false;
     padding:      2px 0px 0px ;
 }
 element {
@@ -98,10 +99,6 @@ scrollbar {
     handle-width: 8px ;
     padding:      0;
 }
-mode-switcher {
-    border:       2px 0px 0px ;
-    border-color: @separatorcolor;
-}
 button {
     spacing:    0;
     text-color: @normal-foreground;
@@ -122,6 +119,7 @@ case-indicator {
 entry {
     spacing:    0;
     text-color: @normal-foreground;
+	placeholder: "";
 }
 prompt {
     spacing:    0;
