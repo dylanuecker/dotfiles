@@ -3,7 +3,7 @@
 # ripped and stripped from https://github.com/jluttine/rofi-power-menu
 # probably should have forked
 
-all=(shutdown reboot lockscreen logout)
+all=(shutdown reboot lockscreen)
 show=("${all[@]}")
 
 declare -A texts
@@ -11,14 +11,9 @@ texts[shutdown]=" shut down"
 texts[reboot]=" reboot"
 texts[lockscreen]=" lock screen"
 
-declare -A icons
-icons[shutdown]="\uf924"
-icons[reboot]=""
-icons[lockscreen]=""
-
 declare -A actions
-actions[shutdown]="systemctl poweroff"
-actions[reboot]="systemctl reboot"
+actions[shutdown]="/usr/bin/poweroff"
+actions[reboot]="/usr/bin/reboot"
 actions[lockscreen]="slock"
 
 if [ $# -eq 0 ]; then
@@ -29,8 +24,8 @@ if [ $# -eq 0 ]; then
 else
 	for entry in "${show[@]}"; do
 		if [ "$1" = "${texts[$entry]}" ]; then
+			#loginctl terminate-session ${XDG_SESSION_ID-}
 			${actions[$entry]}
 		fi
 	done
-	echo "Errruuuggghhh"
 fi
