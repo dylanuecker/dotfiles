@@ -7,27 +7,24 @@ all=(shutdown reboot lockscreen logout)
 show=("${all[@]}")
 
 declare -A texts
-texts[shutdown]="Shut down"
-texts[reboot]="Reboot"
-texts[lockscreen]="Lock screen"
-texts[logout]="Log out"
+texts[shutdown]=" shut down"
+texts[reboot]=" reboot"
+texts[lockscreen]=" lock screen"
 
 declare -A icons
 icons[shutdown]="\uf924"
 icons[reboot]=""
 icons[lockscreen]=""
-icons[logout]=""
 
 declare -A actions
 actions[shutdown]="systemctl poweroff"
 actions[reboot]="systemctl reboot"
 actions[lockscreen]="slock"
-actions[logout]="loginctl terminate-session ${XDG_SESSION_ID-}"
 
 if [ $# -eq 0 ]; then
 	echo -e "\0prompt\x1f"
 	for entry in "${show[@]}"; do
-		echo -e "${texts[$entry]}\0icon\x1fpower"
+		echo -e "${texts[$entry]}"
 	done
 else
 	for entry in "${show[@]}"; do
