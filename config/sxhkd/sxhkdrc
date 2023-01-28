@@ -14,6 +14,10 @@ super + Return
 super + d
     /home/dylan/.config/rofi/open-rofi drun
 
+# open rofi-power-menu
+super + x
+    /home/dylan/.config/rofi/open-rofi powermenu
+
 # ksuperkey? maybe no I like this toggle cause it's like the bookmarks bar for browsers
 super + shift + b
     /home/dylan/.config/polybar/toggle.sh
@@ -32,14 +36,6 @@ XF86Audio{LowerVolume,RaiseVolume}
     polybar-msg action "#volume.hook.0"
 
 # TODO XF86Audio{AudioPrev,AudioPlay,AudioNext} will have to see how Spotify or whatever handles
-
-# lock screen
-super + semicolon
-    slock
-
-# open rofi-power-menu
-super + x
-    /home/dylan/.config/rofi/open-rofi powermenu
 
 #
 # bspwm hotkeys
