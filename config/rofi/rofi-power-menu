@@ -11,10 +11,7 @@ texts[shutdown]=" shut down"
 texts[reboot]=" reboot"
 texts[lockscreen]=" lock screen"
 
-declare -A actions
-actions[shutdown]="/usr/bin/poweroff"
-actions[reboot]="/usr/bin/reboot"
-actions[lockscreen]="slock"
+ineedtosleep="/home/dylan/.config/rofi/ineedtosleep"
 
 if [ $# -eq 0 ]; then
 	echo -e "\0prompt\x1f"
@@ -24,8 +21,7 @@ if [ $# -eq 0 ]; then
 else
 	for entry in "${show[@]}"; do
 		if [ "$1" = "${texts[$entry]}" ]; then
-			#loginctl terminate-session ${XDG_SESSION_ID-}
-			${actions[$entry]}
+			coproc ( $ineedtosleep $entry )
 		fi
 	done
 fi

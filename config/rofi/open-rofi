@@ -9,7 +9,7 @@ options="-modes \"$modes\" -display-drun "
 if [ "$1" = "drun" ]; then
 	rofi -show drun $options \
 		-show-icons \
-		-theme-str 'window { location: north; x-offset: 0px; y-offset: 21px; height: 14%; width: 20%; }'
+		-theme-str 'window { location: center; x-offset: 0px; y-offset: 0px; height: 14%; width: 20%; }'
 elif [ "$1" = "powermenu" ]; then
 	rofi -show powermenu $options \
 		-theme-str 'window { location: north; x-offset: 17px; y-offset: 21px; height: 9%; width: 8%; }' \
