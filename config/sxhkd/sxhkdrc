@@ -2,17 +2,21 @@
 # wm independent hotkeys
 #
 
+# sxhkd reload config files
+super + Escape
+    pkill -USR1 -x sxhkd
+
 # terminal emulator
 super + Return
 	alacritty
 
 # program launcher
 super + d
-    rofi -show drun -show-icons -display-drun ''
+    /home/dylan/.config/rofi/open-rofi drun
 
-# sxhkd reload config files
-super + Escape
-    pkill -USR1 -x sxhkd
+# ksuperkey? maybe no I like this toggle cause it's like the bookmarks bar for browsers
+super + shift + b
+    /home/dylan/.config/polybar/toggle.sh
 
 # control brightness
 XF86MonBrightness{Up,Down}
@@ -27,15 +31,15 @@ XF86Audio{LowerVolume,RaiseVolume}
     wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 5%{-,+} && \ 
     polybar-msg action "#volume.hook.0"
 
-# TODO XF86Audio{AudioPrev,AudioPlay,AudioNext}
+# TODO XF86Audio{AudioPrev,AudioPlay,AudioNext} will have to see how Spotify or whatever handles
 
 # lock screen
 super + semicolon
     slock
 
-super + shift + b
-    /home/dylan/.config/polybar/toggle.sh
-# ksuperkey?
+# open rofi-power-menu
+super + x
+    /home/dylan/.config/rofi/open-rofi powermenu
 
 #
 # bspwm hotkeys

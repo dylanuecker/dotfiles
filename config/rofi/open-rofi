@@ -1,0 +1,10 @@
+#!/bin/bash
+
+modes="drun,powermenu:/home/dylan/.config/rofi/rofi-power-menu"
+options="-modes \"$modes\" -sidebar-mode -show-icons -display-drun  "
+
+if [ "$1" = "drun" ]; then
+	rofi -show drun $options
+elif [ "$1" = "powermenu" ]; then
+	rofi -show powermenu $options
+fi

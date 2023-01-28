@@ -9,10 +9,10 @@
     active-foreground:           rgba ( 101, 172, 255, 100 % );
     lightbg:                     rgba ( 238, 232, 213, 100 % );
     selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
-    background:                  rgba ( 45, 48, 59, 70 % );
-    normal-background:           @background;
+    background:                  rgba ( 28, 27, 34, 70 % );
+    normal-background:           rgba ( 28, 27, 34, 30 % );
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  rgba ( 129, 162, 190, 100 % );
+    selected-normal-background:  rgba ( 129, 162, 190, 70 % );
     border-color:                rgba ( 124, 131, 137, 100 % );
     spacing:                     2;
     separatorcolor:              rgba ( 29, 31, 33, 100 % );
@@ -131,9 +131,6 @@ inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 textbox-prompt-colon {
-	enabled: 	false;
-    expand:     false;
-    str:        ":";
-    margin:     0px 0.3em 0em 0em ;
-    text-color: @normal-foreground;
+	enabled: 	true;
+    str:        "";
 }
