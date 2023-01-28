@@ -1,5 +1,5 @@
 " Author:      Dylan Uecker
-" Last Change: 2022 Jan 22
+" Last Change: 2022 Jan 28
 
 " Renaming .vimrc to vimrc, as will be placed in .vim folder
 
@@ -46,7 +46,13 @@ function VerticalRuler()
 endfunction
 "call VerticalRuler()
 
-colorscheme tender 
+colorscheme tender
+" make transparent
+highlight Normal ctermbg=None
+" override color of line numbers
+highlight LineNr ctermfg=242
+" override color of comments
+highlight Comment ctermfg=244
 
 " set colors for the status line
 " 238 to remove the annoying singular column between vertical breaks
@@ -63,9 +69,6 @@ highlight User5 ctermbg=blue ctermfg=black
 highlight User6 ctermbg=magenta ctermfg=black
 highlight User7 ctermbg=yellow ctermfg=black
 highlight User8 ctermbg=red ctermfg=black
-
-" make transparent
-highlight Normal ctermbg=None
 
 " many more than this, should be adding when encountered    
 let s:modes = {
