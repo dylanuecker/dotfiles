@@ -14,9 +14,6 @@ bspc config gapless_monocle		true # no capes (gaps)
 bspc rule -a Nm-connection-editor state=floating
 bspc rule -a Pavucontrol state=floating
 
-bspc rule -a firefox desktop=^2 follow=off -o
-firefox & # automatically open firefox on second desktop
-
 picom -b
 ~/dotfiles/wallpaper/fehbg &
 ~/.config/polybar/launch.sh
