@@ -12,7 +12,10 @@ bspc config borderless_monocle	true # then won't see the default grey outline fo
 bspc config gapless_monocle		true # no capes (gaps)
 
 bspc rule -a Nm-connection-editor state=floating
-bspc rule -a Pavucontrol state=floating manage=off
+bspc rule -a Pavucontrol state=floating
+
+bspc rule -a firefox desktop=^2 -o
+firefox & # automatically open firefox on second desktop
 
 picom -b
 ~/dotfiles/wallpaper/fehbg &
