@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /home/dylan/.config/polybar/toggle-functions.sh
+
 if [ "$1" = "drun" ]; then
 	drun_options=(-show drun)
 	drun_options+=(-modes drun)
@@ -7,12 +9,34 @@ if [ "$1" = "drun" ]; then
 	drun_options+=(-display-drun )
 	drun_options+=(-theme-str 'window { location: center; height: 14%; width: 20%; }')
 
+	ws=$(bspc query -D -d focused --names)
+	if [ -f /tmp/polybarhidden$ws ]; then
+		show
+	fi
 	rofi "${drun_options[@]}"
+	wait
+	if [ -f /tmp/polybarhidden$ws ]; then
+		hide
+	fi
 elif [ "$1" = "powermenu" ]; then
 	pm_options=(-show powermenu)
 	pm_options+=(-modes powermenu:/home/dylan/.config/rofi/rofi-power-menu)
 	pm_options+=(-theme-str 'inputbar { children: [ prompt,textbox-prompt-colon,case-indicator ]; enabled: false; }')
-	pm_options+=(-theme-str "window { location: center; height: 9%; width: 8%; }")
+	pm_options+=(-theme-str "window { location: north; y-offset: 21px; height: 9%; width: 8%; }")
 
+	ws=$(bspc query -D -d focused --names)
+	if [ -f /tmp/polybarhidden$ws ]; then
+		polybar-msg cmd show
+	fi
+
+	ws=$(bspc query -D -d focused --names)
+	if [ -f /tmp/polybarhidden$ws ]; then
+		show
+	fi
 	rofi "${pm_options[@]}"
+	# I think I want this behavior
+	#wait
+	#if [ -f /tmp/polybarhidden$ws ]; then
+	#	hide
+	#fi
 fi
