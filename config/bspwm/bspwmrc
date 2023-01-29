@@ -11,6 +11,9 @@ bspc config single_monocle		true # set to monocle layout if only one window
 bspc config borderless_monocle	true # then won't see the default grey outline for focused window
 bspc config gapless_monocle		true # no capes (gaps)
 
+bspc rule -a Nm-connection-editor state=floating
+bspc rule -a Pavucontrol state=floating manage=off
+
 picom -b
 ~/dotfiles/wallpaper/fehbg &
 ~/.config/polybar/launch.sh
