@@ -27,12 +27,12 @@ XF86MonBrightness{Up,Down}
     brightnessctl set {+10%,10%-}
 
 XF86AudioMute
-    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && \
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; \
 	polybar-msg action "#volume.hook.0"
 
 XF86Audio{LowerVolume,RaiseVolume}
-	wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && \
-    wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 5%{-,+} && \ 
+	wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; \
+    wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 5%{-,+}; \ 
     polybar-msg action "#volume.hook.0"
 
 # TODO XF86Audio{AudioPrev,AudioPlay,AudioNext} will have to see how Spotify or whatever handles
@@ -103,9 +103,14 @@ super + {o,i}
 	bspc node {older,newer} -f; \
 	bspc wm -h on
 
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+# switch to workspace
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'; \
+    /home/dylan/.config/polybar/toggle.sh "No touchie."
+
+# send to workspace
+super + shift + {1-9,0}
+	bspc node -d '^{1-9,10}'
 
 #
 # preselect
