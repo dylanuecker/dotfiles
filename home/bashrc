@@ -19,4 +19,3 @@ source /usr/share/bash-completion/bash_completion
 
 alias ls='ls --color=auto'
 alias la='ls -A'
-alias lock='slock'
