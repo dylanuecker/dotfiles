@@ -32,6 +32,7 @@ elif [ "$1" = "powermenu" ]; then
 	ws=$(bspc query -D -d focused --names)
 	if [ -f /tmp/polybarhidden$ws ]; then
 		show
+		rm /tmp/polybarhidden$ws
 	fi
 	rofi "${pm_options[@]}"
 	# I think I want this behavior
