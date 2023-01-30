@@ -1,5 +1,5 @@
 " Author:      Dylan Uecker
-" Last Change: 2022 Jan 28
+" Last Change: 2022 Jan 29
 
 " Renaming .vimrc to vimrc, as will be placed in .vim folder
 
@@ -18,6 +18,7 @@ set splitright              " vertical splits
 set nowrap                  " hate line wrapping
 set formatoptions-=cro      " stop continuing comments
 "set iskeyword-=_            " ease of mobility using lower_case_snake_case
+set clipboard=unnamedplus   " use with +clipboard feature
 
 " use jk to enter normal mode from insert mode 
 inoremap jk <ESC>l
