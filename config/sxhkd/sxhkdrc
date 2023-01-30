@@ -19,8 +19,14 @@ super + x
     /home/dylan/.config/rofi/open-rofi powermenu
 
 # ksuperkey? maybe no I like this toggle cause it's like the bookmarks bar for browsers
-super + shift + b
+super + b
     /home/dylan/.config/polybar/toggle.sh
+
+super + shift + b 
+    /home/dylan/.config/polybar/toggle-date.sh mdy
+
+super + alt + b 
+    /home/dylan/.config/polybar/toggle-date.sh sec
 
 # control brightness
 XF86MonBrightness{Up,Down}
