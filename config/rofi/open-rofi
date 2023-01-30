@@ -26,18 +26,8 @@ elif [ "$1" = "powermenu" ]; then
 
 	ws=$(bspc query -D -d focused --names)
 	if [ -f /tmp/polybarhidden$ws ]; then
-		polybar-msg cmd show
-	fi
-
-	ws=$(bspc query -D -d focused --names)
-	if [ -f /tmp/polybarhidden$ws ]; then
 		show
 		rm /tmp/polybarhidden$ws
 	fi
 	rofi "${pm_options[@]}"
-	# I think I want this behavior
-	#wait
-	#if [ -f /tmp/polybarhidden$ws ]; then
-	#	hide
-	#fi
 fi
