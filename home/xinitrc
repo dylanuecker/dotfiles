@@ -37,4 +37,5 @@ fi
 xset -dpms
 xset s off
 
+stty -F /dev/tty1 opost onlcr
 exec bspwm 
