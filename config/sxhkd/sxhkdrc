@@ -41,7 +41,7 @@ XF86Audio{LowerVolume,RaiseVolume}
     wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 5%{-,+}; \ 
     polybar-msg action "#volume.hook.0"
 
-# TODO XF86Audio{AudioPrev,AudioPlay,AudioNext} will have to see how Spotify or whatever handles
+# maybe TODO XF86Audio{AudioPrev,AudioPlay,AudioNext} will have to see how Spotify or whatever handles
 
 #
 # bspwm hotkeys
@@ -59,10 +59,6 @@ super + {_,shift + }w
 super + m
 	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
 # swap the current node and the biggest window
 super + g
 	bspc node -s biggest.window
@@ -75,9 +71,8 @@ super + g
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# set the node flags
-super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
+# maybe something with hidden flag for "minimized"
+# won't really use any of the other flags, so REMOVED
 
 #
 # focus/swap
@@ -87,12 +82,8 @@ super + ctrl + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
 # focus the next/previous window in the current desktop
-super + {_,shift + }c
+alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
@@ -142,13 +133,25 @@ super + ctrl + shift + space
 # move/resize
 #
 
-# expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
+# expand a window by moving one of its side outward (for floating)
+super + alt + {Left,Down,Up,Right}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-# contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
+# contract a window by moving one of its side inward (for floating)
+super + alt + shift + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# resize windows from this reddit post:
+# https://i3.reddit.com/r/bspwm/comments/r5stxu/resizing_windows_nicely_in_my_opinion/
+super + alt + {h,j,k,l}
+    {bspc node @parent/second -z left -20 0; \
+    bspc node @parent/first -z right -20 0, \
+    bspc node @parent/second -z top 0 +20; \
+    bspc node @parent/first -z bottom 0 +20, \
+    bspc node @parent/first -z bottom 0 -20; \
+    bspc node @parent/second -z top 0 -20, \
+    bspc node @parent/first -z right +20 0; \
+    bspc node @parent/second -z left +20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
