@@ -144,14 +144,14 @@ super + alt + shift + {Left,Down,Up,Right}
 # resize windows from this reddit post:
 # https://i3.reddit.com/r/bspwm/comments/r5stxu/resizing_windows_nicely_in_my_opinion/
 super + alt + {h,j,k,l}
-    {bspc node @parent/second -z left -20 0; \
-    bspc node @parent/first -z right -20 0, \
-    bspc node @parent/second -z top 0 +20; \
-    bspc node @parent/first -z bottom 0 +20, \
-    bspc node @parent/first -z bottom 0 -20; \
-    bspc node @parent/second -z top 0 -20, \
-    bspc node @parent/first -z right +20 0; \
-    bspc node @parent/second -z left +20 0}
+    {bspc node @parent/second -z left -10 0; \
+    bspc node @parent/first -z right -10 0, \
+    bspc node @parent/second -z top 0 +10; \
+    bspc node @parent/first -z bottom 0 +10, \
+    bspc node @parent/first -z bottom 0 -10; \
+    bspc node @parent/second -z top 0 -10, \
+    bspc node @parent/first -z right +10 0; \
+    bspc node @parent/second -z left +10 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
