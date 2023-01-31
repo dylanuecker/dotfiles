@@ -2,7 +2,7 @@
 
 show() {
 	polybar-msg cmd show 
-	bspc config top_padding 21
+	bspc config top_padding 26
 	#bspc config gapless_monocle false
 }
 
