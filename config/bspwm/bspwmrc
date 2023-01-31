@@ -13,9 +13,3 @@ bspc config gapless_monocle		true # no capes (gaps)
 
 bspc rule -a Nm-connection-editor state=floating
 bspc rule -a Pavucontrol state=floating
-
-picom -b
-~/dotfiles/wallpaper/fehbg &
-~/.config/polybar/launch.sh
-#redshift -l $(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | awk 'OFS=":" {print $3,$5}' | tr -d ',}') &
-redshift -l 38.981:-76.937 &
