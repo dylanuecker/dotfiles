@@ -22,7 +22,7 @@ elif [ "$1" = "powermenu" ]; then
 	pm_options=(-show powermenu)
 	pm_options+=(-modes powermenu:/home/dylan/.config/rofi/rofi-power-menu)
 	pm_options+=(-theme-str 'inputbar { children: [ prompt,textbox-prompt-colon,case-indicator ]; enabled: false; }')
-	pm_options+=(-theme-str "window { location: north; y-offset: 26px; height: 9%; width: 8%; }")
+	pm_options+=(-theme-str "window { location: northwest; x-offset: 10px; y-offset: 26px; height: 9%; width: 8%; }")
 
 	ws=$(bspc query -D -d focused --names)
 	if [ -f /tmp/polybarhidden$ws ]; then
