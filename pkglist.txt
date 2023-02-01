@@ -32,6 +32,7 @@ scrot
 slock
 sudo
 sxhkd
+ufw
 unzip
 which
 xdg-utils
