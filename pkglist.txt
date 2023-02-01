@@ -33,6 +33,7 @@ slock
 sudo
 sxhkd
 unzip
+which
 xdg-utils
 xf86-video-vesa
 xorg-bdftopcf
