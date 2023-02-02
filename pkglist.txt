@@ -16,6 +16,7 @@ intel-ucode
 linux
 linux-firmware
 make
+nasm
 networkmanager
 nm-connection-editor
 openssh
@@ -26,6 +27,7 @@ pipewire
 pipewire-pulse
 polkit
 polybar
+racket
 redshift
 reflector
 rofi
