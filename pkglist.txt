@@ -25,7 +25,6 @@ pipewire
 pipewire-pulse
 polkit
 polybar
-racket
 redshift
 reflector
 rofi
