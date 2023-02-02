@@ -5,6 +5,7 @@ bluez
 bluez-utils
 brightnessctl
 bspwm
+docker
 edk2-shell
 feh
 firefox
