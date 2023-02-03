@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale ~/dotfiles/wallpaper/cloudbreak2.png
+feh --no-fehbg --bg-center ~/dotfiles/wallpaper/cloudbreak1.jpg
