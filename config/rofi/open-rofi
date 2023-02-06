@@ -5,6 +5,7 @@ source /home/dylan/.config/polybar/toggle-functions.sh
 if [ "$1" = "drun" ]; then
 	drun_options=(-show drun)
 	drun_options+=(-modes drun)
+	drun_options+=(-scroll-method 1)
 	drun_options+=(-show-icons)
 	drun_options+=(-display-drun )
 	drun_options+=(-theme-str 'window { location: center; height: 14%; width: 20%; }')
