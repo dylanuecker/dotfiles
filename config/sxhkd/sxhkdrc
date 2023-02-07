@@ -10,6 +10,9 @@ super + Escape
 super + Return
 	alacritty
 
+super + space
+    firefox
+
 # program launcher
 super + d
     /home/dylan/.config/rofi/open-rofi drun
