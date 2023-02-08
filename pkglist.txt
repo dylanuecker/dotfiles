@@ -20,6 +20,7 @@ make
 nasm
 networkmanager
 nm-connection-editor
+nvidia
 openssh
 pacman-contrib
 pavucontrol
