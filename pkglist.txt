@@ -29,7 +29,6 @@ polybar
 redshift
 reflector
 rofi
-scrot
 slock
 sudo
 sxhkd
