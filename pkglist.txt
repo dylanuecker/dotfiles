@@ -8,7 +8,6 @@ bspwm
 chromium
 docker
 edk2-shell
-expac
 feh
 firefox
 git
