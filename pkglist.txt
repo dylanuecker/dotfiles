@@ -18,6 +18,7 @@ linux-firmware
 make
 networkmanager
 nm-connection-editor
+nvidia
 openssh
 pacman-contrib
 pavucontrol
