@@ -12,6 +12,7 @@ feh
 firefox
 git
 gvim
+hsetroot
 intel-ucode
 linux
 linux-firmware
