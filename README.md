@@ -16,3 +16,6 @@ TODO:
 I leave figuring out HDMI to you later, my friend. Will definitely have to
 enable GPU first, and maybe restart xorg since nvidia module needs to be
 loaded before xorg starts. I don't know you'll figure it out.
+
+I also should really be using relative paths in here (e.g. in case I want to move
+~/dotfiles to ~/.dotfiles)
