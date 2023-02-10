@@ -36,4 +36,9 @@ fi
 
 stty -F /dev/tty1 opost onlcr # fix staircase output on shutdown
 
+#picom -b
+#~/dotfiles/wallpaper/fehbg &
+xsetroot -solid "#152238"
+redshift -l 38.981:-76.937 &
+
 exec bspwm 
