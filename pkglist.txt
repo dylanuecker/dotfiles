@@ -16,6 +16,7 @@ intel-ucode
 linux
 linux-firmware
 make
+mesa-utils
 networkmanager
 nm-connection-editor
 nvidia
