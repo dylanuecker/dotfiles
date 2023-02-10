@@ -14,3 +14,8 @@ bspc config gapless_monocle		true # no capes (gaps)
 
 bspc rule -a Nm-connection-editor state=floating
 bspc rule -a Pavucontrol state=floating
+
+#picom -b
+#~/dotfiles/wallpaper/fehbg &
+~/.config/polybar/launch.sh
+redshift -l 38.981:-76.937 &
