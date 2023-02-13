@@ -10,6 +10,7 @@ docker
 edk2-shell
 feh
 firefox
+ghostscript
 git
 gvim
 hsetroot
