@@ -36,6 +36,8 @@ fi
 
 stty -F /dev/tty1 opost onlcr # fix staircase output on shutdown
 
+xset s off # disable screen saver
+
 picom -b
 #~/dotfiles/wallpaper/fehbg &
 hsetroot -solid "#152238"
