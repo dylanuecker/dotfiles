@@ -10,6 +10,10 @@ super + Escape
 super + Return
 	alacritty
 
+# added a keybind within alacritty for opening a new terminal
+# with the current working directory
+# super + shift + Return
+
 super + space
     firefox
 
