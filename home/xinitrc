@@ -36,6 +36,7 @@ fi
 
 stty -F /dev/tty1 opost onlcr # fix staircase output on shutdown
 
+xset -dpms
 xset s off # disable screen saver
 
 picom -b
