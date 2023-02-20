@@ -1,8 +1,3 @@
-" Author:      Dylan Uecker
-" Last Change: 2022 Jan 29
-
-" Renaming .vimrc to vimrc, as will be placed in .vim folder
-
 syntax on                   " enable syntax highlighting
 filetype plugin indent on   " allow file type specific options
 set number                  " turn on line numbers
@@ -31,6 +26,10 @@ endfor
 
 " command to export to pdf
 command Pdf hardcopy > %.ps | !ps2pdf %.ps && rm %.ps
+
+" Turn on spell check for markdown files and git commit messages
+autocmd FileType markdown setlocal spell
+autocmd FileType markdown setlocal spell
 
 function VerticalRuler()
 	" vertical ruler for 120 characters per line
