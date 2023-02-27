@@ -27,9 +27,12 @@ endfor
 " command to export to pdf
 command Pdf hardcopy > %.ps | !ps2pdf %.ps && rm %.ps
 
-" Turn on spell check for certain files
-autocmd FileType text,markdown,gitcommit setlocal spell
-autocmd BufNewFile,BufRead * if &ft == '' | set ft=text | endif
+" Turn on spell check for certain filetypes
+augroup spellcheck
+	autocmd!
+	autocmd FileType text,markdown,gitcommit setlocal spell
+	autocmd BufRead,BufNewFile TODO setlocal spell
+augroup END
 
 function VerticalRuler()
 	" vertical ruler for 120 characters per line
