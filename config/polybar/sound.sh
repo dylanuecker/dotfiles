@@ -5,7 +5,7 @@ vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
 arr=($vol)
 
 if [ ${#arr[*]} -eq 3 ]; then # array has len 3
-	echo ﱝ # muted
+	echo  # muted
 	exit
 else
 	dec=${arr[1]}
@@ -13,10 +13,10 @@ else
 	tens=${dec:2:1}
 
 	if [ $tens -ge 6 ] || [ $ones -eq 1 ]; then
-		echo 墳
+		echo 
 	elif [ $tens -ge 3 ]; then
-		echo 奔
+		echo 
 	else
-		echo 奄
+		echo 
 	fi
 fi
