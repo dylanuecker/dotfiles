@@ -25,6 +25,10 @@ super + d
 super + x
     /home/dylan/.config/rofi/open-rofi powermenu
 
+# toggle list of active windows in top left
+super + v 
+    polybar-msg action "#xworkspaces.module_toggle"
+
 # ksuperkey? maybe no I like this toggle cause it's like the bookmarks bar for browsers
 super + b
     /home/dylan/.config/polybar/toggle.sh
