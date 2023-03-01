@@ -29,10 +29,10 @@ super + x
 super + b
     /home/dylan/.config/polybar/toggle.sh
 
-super + alt + b 
+super + shift + b 
     /home/dylan/.config/polybar/toggle-date.sh mdy
 
-super + shift + b 
+super + alt + b 
     /home/dylan/.config/polybar/toggle-date.sh sec
 
 # control brightness
