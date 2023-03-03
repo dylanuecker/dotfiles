@@ -27,6 +27,7 @@ nm-connection-editor
 nvidia
 nvidia-prime
 openssh
+p7zip
 pacman-contrib
 pavucontrol
 picom
