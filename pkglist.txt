@@ -7,7 +7,6 @@ bluez-utils
 brightnessctl
 bspwm
 chromium
-dmg2img
 docker
 edk2-shell
 feh
