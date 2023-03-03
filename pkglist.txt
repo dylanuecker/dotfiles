@@ -41,7 +41,6 @@ rofi
 slock
 sudo
 sxhkd
-ttf-droid
 ufw
 unzip
 wget
