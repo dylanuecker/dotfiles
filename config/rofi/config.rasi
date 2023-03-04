@@ -1,3 +1,7 @@
+configuration {
+    font: "SF Mono 12";
+}
+
 * {
     selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
     foreground:                  rgba ( 197, 200, 198, 100 % );
@@ -9,7 +13,7 @@
     active-foreground:           rgba ( 101, 172, 255, 100 % );
     lightbg:                     rgba ( 238, 232, 213, 100 % );
     selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
-    background:                  rgba ( 28, 27, 34, 70 % );
+    background:                  rgba (   0,   0,   0, 100 % );
     normal-background:           rgba ( 28, 27, 34, 00 % );
     lightfg:                     rgba ( 88, 104, 117, 100 % );
     selected-normal-background:  rgba ( 129, 162, 190, 70 % );
