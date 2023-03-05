@@ -48,6 +48,7 @@ unzip
 wget
 which
 xdg-utils
+xf86-video-intel
 xf86-video-vesa
 xorg-bdftopcf
 xorg-docs
