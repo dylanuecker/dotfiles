@@ -20,6 +20,7 @@ intel-ucode
 linux
 linux-firmware
 make
+man-pages
 mesa-utils
 nasm
 networkmanager
