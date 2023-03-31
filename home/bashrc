@@ -11,6 +11,8 @@ set -o vi
 bind '"jk":"\el"'
 bind -m vi-command '"v": ""'
 
+bind '"\C-l":clear-screen'
+
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export LESSHISTFILE=-
