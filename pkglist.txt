@@ -48,6 +48,7 @@ ufw
 unzip
 wget
 which
+wireshark-qt
 xdg-utils
 xf86-video-intel
 xf86-video-vesa
