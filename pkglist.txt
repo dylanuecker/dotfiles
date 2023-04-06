@@ -44,7 +44,6 @@ scrot
 slock
 sudo
 sxhkd
-termshark
 ufw
 unzip
 wget
