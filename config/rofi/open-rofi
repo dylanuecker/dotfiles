@@ -8,7 +8,7 @@ if [ "$1" = "drun" ]; then
 	drun_options+=(-scroll-method 1)
 	drun_options+=(-show-icons)
 	drun_options+=(-display-drun )
-	drun_options+=(-theme-str 'window { location: center; height: 14.3%; width: 14.3%; }')
+	drun_options+=(-theme-str 'window { location: center; height: 10.6%; width: 14.3%; }')
 
 	ws=$(bspc query -D -d focused --names)
 	if [ -f /tmp/polybarhidden$ws ]; then
@@ -23,7 +23,7 @@ elif [ "$1" = "powermenu" ]; then
 	pm_options=(-show powermenu)
 	pm_options+=(-modes powermenu:/home/dylan/.config/rofi/rofi-power-menu)
 	pm_options+=(-theme-str 'inputbar { children: [ prompt,textbox-prompt-colon,case-indicator ]; enabled: false; }')
-	pm_options+=(-theme-str "window { location: center; height: 7.6%; width: 7.8%; }")
+	pm_options+=(-theme-str "window { location: center; height: 8.4%; width: 8.4%; }")
 
 	ws=$(bspc query -D -d focused --names)
 	if [ -f /tmp/polybarhidden$ws ]; then
