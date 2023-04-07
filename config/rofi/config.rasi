@@ -1,5 +1,5 @@
 configuration {
-    font: "SF Mono 12";
+    font: "SF Mono 13";
 }
 
 * {
