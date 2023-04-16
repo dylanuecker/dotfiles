@@ -25,6 +25,7 @@ mesa-utils
 nasm
 networkmanager
 nm-connection-editor
+ntfs-3g
 nvidia
 nvidia-prime
 openssh
