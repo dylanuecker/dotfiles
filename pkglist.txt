@@ -7,10 +7,12 @@ bluez-utils
 brightnessctl
 bspwm
 chromium
+cowsay
 docker
 edk2-shell
 feh
 firefox
+fortune-mod
 gcc
 ghostscript
 git
