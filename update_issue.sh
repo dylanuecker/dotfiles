@@ -7,9 +7,9 @@
 #
 #echo "$issue" > /etc/issue
 
-issue="\e{lightcyan}Arch Linux\e{reset}\e{lightred} \r\e{reset}" 
+issue="Arch Linux \e{lightred}\r\e{reset} (\l)" 
 issue+=$'\n\n'
-issue+="\e{lightgreen}$(fortune -a)\e{reset}" 
+issue+="\e{lightcyan}$(fortune -a)\e{reset}" 
 issue+=$'\n'
 
 echo "$issue" > /etc/issue
