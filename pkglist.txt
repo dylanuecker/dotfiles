@@ -14,6 +14,7 @@ feh
 firefox
 fortune-mod
 gcc
+gdb
 ghostscript
 git
 gvim
