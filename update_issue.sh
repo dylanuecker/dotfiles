@@ -1,15 +1,26 @@
 #!/bin/bash
 
-#text="$(fortune -a | fmt -200 -s)"
-#
-#issue="$(cowthink -f snoopy-doghouse <<< $text)"
-#issue+=$'\n' # new line between username enter
-#
-#echo "$issue" > /etc/issue
+# using a systemd unit to generate a new fortune message at boot
+# default /etc/issue gets displayed first
 
-issue="\e{lightcyan}Arch Linux\e{reset} \r (\l)" 
-issue+=$'\n\n'
-issue+="\e{lightred}$(fortune -a)\e{reset}" 
-issue+=$'\n'
+mkdir -p /etc/issue.d # you'll thank yourself in the future
 
-echo "$issue" > /etc/issue
+fortune=$(fortune -a)
+
+max_line_len=0
+while IFS= read -d $'\n' line; do
+	no_tabs=$(expand <<< $line)
+	curr_line_len=${#no_tabs}
+	if ((curr_line_len > max_line_len)); then
+		max_line_len=$curr_line_len
+	fi
+done <<< $fortune
+
+echo -n \
+"$(date)
+
+\e{lightred}$fortune\e{reset}
+
+$(printf "%0.s-" $(seq $max_line_len))
+
+" > /etc/issue.d/fortune.issue
