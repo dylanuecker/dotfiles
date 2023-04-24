@@ -40,6 +40,7 @@ pipewire
 pipewire-pulse
 polkit
 polybar
+protobuf-c
 racket
 redshift
 reflector
