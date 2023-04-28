@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# TODO
+# do something when directory is empty
+# try to update PS1 in some way on each cd
+# what if number of directories carries over onto more than one line
+
 cleanup() {
 	tput el
 	tput cnorm
