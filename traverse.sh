@@ -1,15 +1,66 @@
 #!/bin/bash
 
-trap "tput cnorm && return" SIGINT
+cleanup() {
+	tput el
+	tput cnorm
+	if [ $toggle = 1 ]; then
+		shopt -u dotglob
+	fi
+	ls
+}
 
+trap "cleanup && return" SIGINT
+
+index=0
+toggle=0
 tput civis
 while : ; do
-	ls --color=always -d */ | tr -d "/" | tr "\n" " " 
+	dirs=($(ls -d */ 2> /dev/null | tr -d "/"))
+	output=($(ls --color=always -d */ 2> /dev/null | tr -d "/"))
+	output[$index]="\033[31;1m${dirs[$index]}\033[0m"
+	echo -en "${output[*]}"
+	tput el
 	echo -en "\r"
 	read -s -n 1 input
 	case $input in
-		j) cd .. ;;
-		*) break ;;
+		h)
+			if [ $index != 0 ]; then
+				((index--))
+			fi
+			;;
+		j) 
+			cd ${dirs[$index]} 
+			index=0
+			;;
+		k)
+			cd ..
+			index=0
+			;;
+		l)
+			if [ $index != $(( ${#dirs[@]} - 1)) ]; then
+				((index++))
+			fi
+			;;
+		a)
+			if [ $toggle == 0 ]; then
+				shopt -s dotglob
+				toggle=1
+			else
+				shopt -u dotglob
+				toggle=0
+			fi
+			;;
+		d)
+			cd
+			break
+			;;
+		f)
+			cd
+			index=0
+			;;
+		*) 
+			break 
+			;;
 	esac
 done
-tput cnorm
+cleanup
