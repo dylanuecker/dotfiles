@@ -16,3 +16,6 @@ done
 
 ln -sfT ~/dotfiles/libre/pptx2pdf.sh ~/.local/bin/pptx2pdf
 echo "create symlink for ~/.local/bin/pptx2pdf"
+
+ln -sfT ~/dotfiles/traverse.sh ~/.local/bin/traverse
+echo "create symlink for ~/.local/bin/traverse"
