@@ -63,6 +63,10 @@ while : ; do
 			cd
 			index=0
 			;;
+		"")
+			cd ${dirs[$index]} 
+			break
+			;;
 		*) 
 			break 
 			;;
