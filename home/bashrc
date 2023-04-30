@@ -8,10 +8,13 @@ SECONDARY=$(tput setaf 7) # white
 PS1='\[$BOLD\]\[$PRIMARY\]\u@\h\[$SECONDARY\] \w \$\[$RESET\] '
 
 set -o vi
+# bind jk to escape and then move once to the left
 bind '"jk":"\el"'
-bind -m vi-command '"v": ""'
+# v in "command mode" doesn't open vim for editing
+#bind -m vi-command '"v": ""'
 
 bind '"\C-l":clear-screen'
+bind '"kj":"dc\n"'
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
