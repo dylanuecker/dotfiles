@@ -760,11 +760,6 @@ font:
 # in the order they were defined in.
 key_bindings:
   - { key: Return,    mods: Super|Shift,                action: SpawnNewInstance }
-  - {
-      key: U,
-      mods: Control,
-      chars: "dc\n"
-    }
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
