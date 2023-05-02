@@ -14,6 +14,9 @@ cleanup() {
 		shopt -u dotglob
 	fi
 	ls
+	if [ $(git rev-parse --is-inside-work-tree) = "true" ]; then
+		echo -e "\n\033[31;1mgit pull?\033[0m"
+	fi
 }
 
 trap "cleanup && return" SIGINT
