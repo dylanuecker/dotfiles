@@ -6,6 +6,8 @@
 #   way, won't be very hard
 # - try to update PS1 in some way on each cd
 # - what if number of directories carries over onto more than one line
+# - display git pull message only if remote is ahead, to be effective need to
+#   be using a keyring, so I won't have to unlock the key each time
 
 cleanup() {
 	tput el
@@ -13,10 +15,11 @@ cleanup() {
 	if [ $toggle = 1 ]; then
 		shopt -u dotglob
 	fi
-	ls
-	if [ $(git rev-parse --is-inside-work-tree) = "true" ]; then
-		echo -e "\n\033[31;1mgit pull?\033[0m"
+	if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = "true" ]; then
+		gs
+		echo -e "\033[31mgit pull?\033[0m\n"
 	fi
+	ls
 }
 
 trap "cleanup && return" SIGINT
