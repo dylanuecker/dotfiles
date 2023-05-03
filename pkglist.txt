@@ -51,6 +51,7 @@ scrot
 slock
 sudo
 sxhkd
+transmission-gtk
 ufw
 unzip
 wget
