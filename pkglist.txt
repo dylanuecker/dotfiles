@@ -42,6 +42,7 @@ pipewire-pulse
 polkit
 polybar
 protobuf-c
+python-pip
 racket
 redshift
 reflector
