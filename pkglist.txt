@@ -109,4 +109,3 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 zip
-zoom
