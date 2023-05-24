@@ -8,7 +8,6 @@ brightnessctl
 bspwm
 chromium
 cowsay
-docker
 edk2-shell
 feh
 firefox
