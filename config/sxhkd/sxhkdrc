@@ -52,7 +52,8 @@ XF86Audio{LowerVolume,RaiseVolume}
     wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 5%{-,+}; \ 
     polybar-msg action "#volume.hook.0"
 
-# maybe TODO XF86Audio{AudioPrev,AudioPlay,AudioNext} will have to see how Spotify or whatever handles
+XF86Audio{Prev,Play,Next}
+    playerctl {previous,play-pause,next}
 
 #
 # bspwm hotkeys
