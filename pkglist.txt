@@ -9,6 +9,7 @@ bspwm
 chromium
 cowsay
 discord
+dnsmasq
 edk2-shell
 feh
 ffmpeg4.4
