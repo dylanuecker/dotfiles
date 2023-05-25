@@ -11,6 +11,7 @@ cowsay
 discord
 edk2-shell
 feh
+ffmpeg4.4
 firefox
 fortune-mod
 gcc
