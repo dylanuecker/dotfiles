@@ -28,7 +28,6 @@ make
 man-pages
 mesa-utils
 nasm
-network-manager-applet
 networkmanager
 nm-connection-editor
 ntfs-3g
