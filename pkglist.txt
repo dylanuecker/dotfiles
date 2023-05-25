@@ -48,6 +48,7 @@ reflector
 rofi
 scrot
 slock
+spotify-launcher
 sudo
 sxhkd
 ufw
