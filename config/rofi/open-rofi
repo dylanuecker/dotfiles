@@ -8,6 +8,7 @@ if [ "$1" = "drun" ]; then
 	drun_options+=(-scroll-method 1)
 	drun_options+=(-show-icons)
 	drun_options+=(-display-drun )
+	drun_options+=(-drun-display-format {name})
 	drun_options+=(-theme-str 'window { location: center; height: 10.6%; width: 14.3%; }')
 
 	ws=$(bspc query -D -d focused --names)
