@@ -45,6 +45,7 @@ pipewire-pulse
 playerctl
 polkit
 polybar
+powertop
 protobuf-c
 python-pip
 redshift
