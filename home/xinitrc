@@ -42,6 +42,6 @@ xset s off # disable screen saver
 picom -b
 ~/dotfiles/wallpaper/fehbg &
 #hsetroot -solid "#152238"
-redshift &
+#redshift &
 
 exec bspwm 
