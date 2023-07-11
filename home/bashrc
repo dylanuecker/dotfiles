@@ -13,13 +13,15 @@ bind '"jk":"\el"'
 # v in "command mode" doesn't open vim for editing
 #bind -m vi-command '"v": ""'
 
-bind '"\C-l":clear-screen'
+bind '"kk":clear-screen'
+bind '"jj":"ls\n"'
 bind '"kj":"dc\n"'
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export LESSHISTFILE=-
 export PATH="$HOME/.local/bin:$PATH"
+export HISTIGNORE="ls"
 
 source /usr/share/bash-completion/bash_completion
 
