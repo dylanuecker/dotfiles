@@ -57,6 +57,7 @@ sudo
 sxhkd
 ufw
 unzip
+usbutils
 wget
 which
 wireshark-qt
