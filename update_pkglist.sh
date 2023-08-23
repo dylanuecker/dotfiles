@@ -1,8 +1,15 @@
 #!/bin/bash
 
-cd /home/dylan/dotfiles
-pacman -Qqe > pkglist.txt
-if [[ 'git status --porcelain pkglist.txt' ]]; then
-	git add pkglist.txt
+if [[ "$HOSTNAME" == "cloudbreak" ]]; then
+	filename=laptop-pkglist
+else
+	filename=pc-pkglist
+fi
+
+cd /home/dylan/.private-dotfiles
+pacman -Qqe > $filename
+if [[ 'git status --porcelain $filename' ]]; then
+	git add $filename
 	git commit -m "Update package list"
+	git push
 fi
