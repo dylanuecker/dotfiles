@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale ~/dotfiles/wallpaper/arch_fill.png
+feh --no-fehbg --bg-scale ~/dotfiles/config/wallpaper/arch_fill.png

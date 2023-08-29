@@ -40,7 +40,7 @@ xset -dpms
 xset s off # disable screen saver
 
 picom -b
-~/dotfiles/wallpaper/fehbg &
+~/dotfiles/config/wallpaper/fehbg &
 #hsetroot -solid "#152238"
 #redshift &
 
