@@ -20,7 +20,9 @@ zstyle ':vcs_info:git:*' formats '[%b]'
 PROMPT='%B%(?..[%?] )%F{blue}%n@%m%F{white} %~ %#%f%b '
 RPROMPT='%B%F{blue}${vcs_info_msg_0_}%f%b'
 
-VISUAL=vim EDITOR=$VISUAL LESSHISTFILE=-
+export VISUAL=vim
+export EDITOR=$VISUAL
+LESSHISTFILE=-
 PATH="$HOME/.local/bin:$PATH"
 
 HISTFILE="$HOME/.zhistory"
