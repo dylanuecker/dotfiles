@@ -10,11 +10,17 @@ bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode 
 KEYTIMEOUT=10 # 0.1 seconds
 
-PROMPT='%B%(?..[%?] )%F{blue}%n@%m%F{white} %~ %#%f%b '
+autoload -Uz vcs_info
+precmd() {
+	vcs_info
+}
+setopt PROMPT_SUBST
+zstyle ':vcs_info:git:*' formats '[%b]'
 
-VISUAL=vim
-EDITOR=$VISUAL
-LESSHISTFILE=-
+PROMPT='%B%(?..[%?] )%F{blue}%n@%m%F{white} %~ %#%f%b '
+RPROMPT='%B%F{blue}${vcs_info_msg_0_}%f%b'
+
+VISUAL=vim EDITOR=$VISUAL LESSHISTFILE=-
 PATH="$HOME/.local/bin:$PATH"
 
 HISTFILE="$HOME/.zhistory"
