@@ -1,0 +1,55 @@
+{
+	"layer": "top",
+	"position": "top",
+
+    "height": 20,
+    // "width": ,
+
+    "spacing": 5,
+
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-center": ["clock"],
+    "modules-right": ["bluetooth", "network", "wireplumber", "battery"],
+
+	"hyprland/workspaces": {
+	},
+
+	"hyprland/submap": {
+		"tooltip": false
+	},
+
+    "clock": {
+		"format": "{:%b %d %I:%M}"
+    },
+
+	"bluetooth": {
+		// TODO, once I actually need to use bluetooth
+	},
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "",
+		"tooltip": false,
+		"on-click": "nm-connection-editor",
+    },
+
+	"wireplumber": {
+		"format": "{icon}",
+		"format-muted": "",
+		"tooltip": false,
+        "on-click": "pavucontrol",
+		"format-icons": ["","",""]
+	},
+
+	// TODO
+    "battery": {
+        "states": {
+            "warning": 25,
+        },
+        "format": "{capacity}% {icon}",
+        "format-alt": "{time} {icon}",
+        "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+}
