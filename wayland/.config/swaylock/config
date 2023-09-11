@@ -1,0 +1,12 @@
+ignore-empty-password
+color=00000077
+inside-color=00000000
+line-uses-inside
+key-hl-color=81a2be
+ring-color=81a2be77
+separator-color=00000000
+
+inside-ver-color=00000000
+line-ver-color=00000000
+ring-ver-color=00000000
+text-ver-color=00000000
