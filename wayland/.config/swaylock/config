@@ -5,6 +5,7 @@ line-uses-inside
 key-hl-color=81a2be
 ring-color=81a2be77
 separator-color=00000000
+indicator-idle-visible
 
 inside-ver-color=00000000
 line-ver-color=00000000
