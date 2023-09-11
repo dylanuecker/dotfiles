@@ -19,9 +19,7 @@
 	},
 
     "clock": {
-		"format": "{:%I:%M %p}",
-        "format-alt": "{:%m/%d/%y %I:%M:%S %p}",
-		"interval": 1
+		"format": "{:%b %d %I:%M}"
     },
 
 	"bluetooth": {
