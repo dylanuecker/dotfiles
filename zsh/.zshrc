@@ -33,12 +33,18 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
+HISTORY_IGNORE="(cd(| *)|ls(| *))"
 
 alias ls='ls --color=auto'
 alias la='ls -A'
 
-alias gs='git status'
+alias diff='diff --color=auto'
+
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
 alias gd='git diff'
 alias gl='git log'
-alias gb='git branch'
-alias gc='git checkout'
+alias gp='git push'
+alias gpl='git pull'
+alias gs='git status'
