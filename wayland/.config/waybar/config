@@ -8,8 +8,8 @@
     "spacing": 5,
 
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-    "modules-center": ["clock"],
-    "modules-right": ["bluetooth", "network", "wireplumber", "battery"],
+    "modules-center": [],
+    "modules-right": ["bluetooth", "network", "wireplumber", "battery", "clock"],
 
 	"hyprland/workspaces": {
 	},
