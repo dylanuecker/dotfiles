@@ -1,10 +1,10 @@
 * {
-	font-family: SF Mono, Symbols Nerd Font Mono, feather;
-    font-size: 14px;
+	font-family: MartianMono, Symbols Nerd Font Mono, feather;
+    font-size: 13px;
 }
 
 window#waybar {
-    background-color: rgba(21, 24, 22, 1);
+    background-color: rgba(22, 22, 22, 0.7);
     color: #c5c8c6;
 }
 
