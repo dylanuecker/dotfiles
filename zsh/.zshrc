@@ -19,6 +19,7 @@ zstyle ':vcs_info:git:*' formats '[%b]'
 
 PROMPT='%B%(?..[%?] )%F{blue}%n@%m%F{white} %~ %#%f%b '
 RPROMPT='%B%F{blue}${vcs_info_msg_0_}%f%b'
+ZLE_RPROMPT_INDENT=0
 
 export VISUAL=vim
 export EDITOR=$VISUAL
