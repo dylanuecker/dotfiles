@@ -76,7 +76,7 @@
 	},
 
 	"custom/weather": {
-		"exec": "~/.config/waybar/weather.sh",
+		"exec": "~/.config/waybar/weather.py",
 		"interval": 60,
 		"tooltip": false
 	},
