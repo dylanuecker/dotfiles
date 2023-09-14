@@ -55,6 +55,10 @@ window#waybar {
     font-size: 16px;
 }
 
+#custom-weather {
+	padding-right: 5px;
+}
+
 #submap,
 #network.disconnected,
 #workspaces button.urgent {
