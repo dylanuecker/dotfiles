@@ -5,16 +5,11 @@
     "height": 20,
     // "width": ,
 
-    "spacing": 5,
+    "spacing": 0,
 
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/submap"],
-    "modules-right": ["tray", "bluetooth", "network", "wireplumber", "battery", "clock"],
-
-	"tray": {
-		// "icon-size": 21,
-		"spacing": 5
-	},
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-center": ["disk", "custom/cputemp", "cpu", "custom/gpu", "memory"],
+    "modules-right": ["bluetooth", "tray", "network", "wireplumber", "battery", "clock"],
 
 	"hyprland/workspaces": {
 	},
@@ -23,12 +18,45 @@
 		"tooltip": false
 	},
 
-    "clock": {
-		"format": "{:%b %d %I:%M}"
-    },
+	"cpu": {
+		"format": "{usage:2}%",
+		"interval": 10,
+		"tooltip": false
+	},
+
+	"custom/cputemp": {
+		"exec": "~/.config/waybar/cputemp.sh",
+		"interval": 10,
+		"tooltip": false
+	},
+
+	"disk": {
+		"format": "{path} {percentage_used}%" ,
+		"interval": 30,
+		"tooltip": false
+	},
+	
+	"memory": {
+		"format": "MEM {percentage:2}%",
+		"interval": 10,
+		"tooltip": false
+	},
+
+	"custom/gpu": {
+		"exec": "~/.config/waybar/gpustats.sh",
+		"interval": 10,
+		"tooltip": false
+	},
 
 	"bluetooth": {
 		// TODO, once I actually need to use bluetooth
+	},
+
+	"tray": {
+		"icon-size": 16,
+		"spacing": 10,
+		"reverse-direction": true,
+		"show-passive-items": true
 	},
 
     "network": {
@@ -56,5 +84,9 @@
         "format-alt": "{time} {icon}",
         "format-full": "",
         "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+		"format": "{:%b %d %I:%M}"
     },
 }

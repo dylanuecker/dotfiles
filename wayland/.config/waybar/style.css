@@ -29,9 +29,27 @@ window#waybar {
     box-shadow: inset 0 -3px #81a2be;
 }
 
+#cpu,
+#custom-cputemp,
+#custom-gpu,
+#disk,
+#memory {
+	padding: 0 5px;
+}
+
+#custom-cputemp {
+	padding-right: 0;
+	margin: 0;
+}
+#cpu {
+	padding-left: 0;
+	margin: 0;
+}
+
 #bluetooth,
 #network,
 #wireplumber,
+#tray,
 #battery {
     padding: 0 5px;
     font-size: 16px;
@@ -72,5 +90,5 @@ window#waybar {
 }
 
 #clock {
-	margin-right: 5;
+	margin-right: 5px;
 }
