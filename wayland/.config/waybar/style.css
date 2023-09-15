@@ -59,6 +59,10 @@ window#waybar {
 	padding-right: 5px;
 }
 
+#submap {
+	padding: 0 5px;
+}
+
 #submap,
 #network.disconnected,
 #workspaces button.urgent {
