@@ -13,7 +13,7 @@ window.DP-1 #clock {
 }
 
 window.DP-1 #custom-weather {
-	margin-left: -5px;
+	margin-left: -4px;
 	margin-right: -2px;
 }
 
@@ -22,7 +22,7 @@ window.eDP-1 * {
 }
 
 window.eDP-1 #battery {
-	margin-left: -3px;
+	margin-left: -2px;
 }
 
 window#waybar {
