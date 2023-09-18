@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ -f ~/.config/waybar/hidestats ]; then
+	exit
+fi
+
 disk () {
 	echo "/ $(df --output=pcent / | tr -dc '0-9')%"
 }
