@@ -1,8 +1,24 @@
 * {
 	font-family: MartianMono, Symbols Nerd Font Mono, feather;
-    font-size: 15px;
 	margin: 0;
 	padding: 0;
+}
+
+window.DP-1 * {
+	font-size: 13px;
+}
+
+window.DP-1 #clock {
+	margin-right: 5px;
+}
+
+window.DP-1 #custom-weather {
+	margin-left: -5px;
+	margin-right: -2px;
+}
+
+window.eDP-1 * {
+	font-size: 15px;
 }
 
 window#waybar {
