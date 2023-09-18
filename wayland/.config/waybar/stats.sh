@@ -9,8 +9,8 @@ disk () {
 }
 
 memory () {
-	memUsage=$(free -m | awk '/Mem/{print $3}')
-	echo "MEM USAGE%"
+	usage=$(free | grep Mem | awk '{printf "%2.0f", $3/$2 * 100.0}')
+	echo "MEM $usage%"
 }
 
 cpu () {
@@ -19,8 +19,27 @@ cpu () {
 	else
 		temp=$(sensors k10temp-pci-00c3 | grep Tctl | awk '{print $2}' | cut -c 2-3)
 	fi
-	usage=$(top -bn1 | awk '/Cpu/ {printf "%2.0f", $2}')
-	echo "CPU $temp°C USAGE%"
+
+	prevcpu=(`cat /proc/stat | grep '^cpu '`)
+	unset prevcpu[0]
+	previdle=${prevcpu[4]}
+	prevtotal=0
+	for val in "${prevcpu[@]}"; do
+		prevtotal=$((prevtotal + val))
+	done
+
+	sleep 0.5
+
+	cpu=(`cat /proc/stat | grep '^cpu '`)
+	unset cpu[0]
+	idle=${cpu[4]}
+	total=0
+	for val in "${cpu[@]}"; do
+		total=$((total + val))
+	done
+
+	usage=$((100 * ((total - prevtotal) - (idle - previdle)) / (total - prevtotal)))
+	echo "CPU $temp°C $(printf "%2d" $usage)%"
 }
 
 gpu () {
