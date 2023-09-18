@@ -3,13 +3,13 @@
 	"position": "top",
 
     "height": 20,
-    // "width": ,
 
-    "spacing": 0,
+    "spacing": 10,
+	"margin-right": 0,
 
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-    "modules-center": ["disk", "custom/cputemp", "cpu", "custom/gpu", "memory"],
-    "modules-right": ["bluetooth", "tray", "network", "wireplumber", "custom/weather", "battery", "clock"],
+    "modules-center": ["custom/stats"],
+    "modules-right": ["tray", "bluetooth", "network", "wireplumber", "custom/weather", "battery", "clock"],
 
 	"hyprland/workspaces": {
 	},
@@ -18,38 +18,15 @@
 		"tooltip": false
 	},
 
-	"cpu": {
-		"format": "{usage:2}%",
-		"interval": 10,
-		"tooltip": false
-	},
-
-	"custom/cputemp": {
-		"exec": "~/.config/waybar/cputemp.sh",
-		"interval": 10,
-		"tooltip": false
-	},
-
-	"disk": {
-		"format": "{path} {percentage_used}%" ,
-		"interval": 30,
-		"tooltip": false
-	},
-	
-	"memory": {
-		"format": "MEM {percentage:2}%",
-		"interval": 10,
-		"tooltip": false
-	},
-
-	"custom/gpu": {
-		"exec": "~/.config/waybar/gpustats.sh",
+	"custom/stats": {
+		"exec": "~/.config/waybar/stats.sh",
 		"interval": 10,
 		"tooltip": false
 	},
 
 	"bluetooth": {
-		// TODO, once I actually need to use bluetooth
+		"format-off": "",
+		"tooltip": false
 	},
 
 	"tray": {
@@ -81,18 +58,17 @@
 		"tooltip": false
 	},
 
-	// TODO
     "battery": {
         "states": {
             "warning": 25,
         },
-        "format": "{capacity}% {icon}",
-        "format-alt": "{time} {icon}",
+        "format": "{capacity}%  <span font='16px'>{icon}</span>",
         "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["<span color='#e03a3e'> </span>", "", "", ""],
+		"tooltip": false
     },
 
     "clock": {
-		"format": "{:%b %d %I:%M}"
+		"format": "{:%a %d %I:%M}"
     },
 }

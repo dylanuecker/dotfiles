@@ -1,6 +1,8 @@
 * {
 	font-family: MartianMono, Symbols Nerd Font Mono, feather;
-    font-size: 13px;
+    font-size: 15px;
+	margin: 0;
+	padding: 0;
 }
 
 window#waybar {
@@ -9,7 +11,7 @@ window#waybar {
 }
 
 #workspaces button {
-    padding: 0 5px;
+	padding: 0 5px;
     color: #c5c8c6;
 	background: transparent;
     box-shadow: inset 0 -3px transparent;
@@ -22,45 +24,17 @@ window#waybar {
     text-shadow: inherit;
 	background: transparent;
     border: none;
-    padding: 0 5px;
 }
 
 #workspaces button.active {
     box-shadow: inset 0 -3px #81a2be;
 }
 
-#cpu,
-#custom-cputemp,
-#custom-gpu,
-#disk,
-#memory {
-	padding: 0 5px;
-}
-
-#custom-cputemp {
-	padding-right: 0;
-	margin: 0;
-}
-#cpu {
-	padding-left: 0;
-	margin: 0;
-}
-
+#tray,
 #bluetooth,
 #network,
-#wireplumber,
-#tray,
-#battery {
-    padding: 0 5px;
-    font-size: 16px;
-}
-
-#custom-weather {
-	padding-right: 5px;
-}
-
-#submap {
-	padding: 0 5px;
+#wireplumber {
+    font-size: 16px; /* for icons */
 }
 
 #submap,
@@ -68,35 +42,4 @@ window#waybar {
 #workspaces button.urgent {
 	font-weight: bold;
     color: #e03a3e;
-}
-
-#battery {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#clock {
-	margin-right: 5px;
 }
