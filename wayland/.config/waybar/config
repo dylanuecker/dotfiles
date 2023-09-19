@@ -59,11 +59,8 @@
 	},
 
     "battery": {
-        "states": {
-            "warning": 25,
-        },
         "format": "{capacity}%  <span font='16px'>{icon}</span>",
-        "format-full": "",
+        "format-full": "<span font='16px' rise='-16pt'></span>",
         "format-icons": ["<span color='#e03a3e'> </span>", "", "", ""],
 		"tooltip": false
     },
