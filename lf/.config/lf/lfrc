@@ -1,0 +1,21 @@
+set cursorpreviewfmt "\033[7;2m"
+
+set drawbox
+
+set hidden
+set sortby "time"
+set reverse
+
+set info "time:size"
+set dircounts
+
+map <enter> open
+
+map D delete
+
+cmd open &{{
+    case $(file --mime-type -Lb $f) in
+        text/*) lf -remote "send $id \$$EDITOR \$fx";;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
