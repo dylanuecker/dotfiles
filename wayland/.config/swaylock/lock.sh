@@ -1,6 +1,8 @@
 #!/bin/sh
 image=/home/dylan/.config/lockscreen
 
+hyprctl keyword general:cursor_inactive_timeout 1
+
 if [[ "$HOSTNAME" == "cloudbreak" ]]; then
 	hyprctl dispatch dpms off
 fi
@@ -12,4 +14,4 @@ if [[ "$HOSTNAME" == "cloudbreak" ]]; then
 	sleep 0.5; (sleep 0.5; hyprctl dispatch dpms on) &
 fi
 
-swaylock; killall -SIGUSR2 waybar
+swaylock; hyprctl keyword general:cursor_inactive_timeout 0; killall -SIGUSR2 waybar
