@@ -49,3 +49,5 @@ alias gl='git log'
 alias gp='git push'
 alias gpl='git pull'
 alias gs='git status'
+
+alias lf='lf -last-dir-path ~/.config/lf/lastdirpath; cd $(head -1 ~/.config/lf/lastdirpath)'
