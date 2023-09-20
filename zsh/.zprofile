@@ -1,5 +1,6 @@
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 	eval "$(ssh-agent -t 1h)"
+	systemctl --user import-environment SSH_AUTH_SOCK
 	export LIBSEAT_BACKEND=logind
 	if [[ $HOST == "cloudbreak" ]]; then
 		config="/home/dylan/.config/hypr/laptop.conf"
