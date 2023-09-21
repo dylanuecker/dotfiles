@@ -59,8 +59,13 @@ window#waybar {
     font-size: 16px;
 }
 
-#bluetooth {
+window.DP-1 #bluetooth {
 	font-size: 14px;
+}
+
+window.eDP-1 #bluetooth {
+	font-size: 16px;
+	margin-top: 2px;
 }
 
 #submap,
