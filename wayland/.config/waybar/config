@@ -25,7 +25,10 @@
 	},
 
 	"bluetooth": {
+		"format-on": "󰂯",
 		"format-off": "",
+		"format-disabled": "",
+		"on-click": "blueman-manager",
 		"tooltip": false
 	},
 
@@ -38,7 +41,7 @@
 
     "network": {
         "format-wifi": "",
-        "format-ethernet": "󰈀",
+        "format-ethernet": "", // yes ethernet icon should be criminal
         "format-disconnected": "",
 		"tooltip": false,
 		"on-click": "nm-connection-editor",
