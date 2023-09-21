@@ -10,5 +10,4 @@ else
 	rfkill unblock bluetooth
 	bluetoothctl power on
 	touch $file
-	blueman-manager & disown
 fi
