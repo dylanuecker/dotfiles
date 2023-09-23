@@ -9,7 +9,7 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     "modules-center": ["custom/stats"],
-    "modules-right": ["tray", "bluetooth", "network", "wireplumber", "custom/weather", "battery", "clock"],
+    "modules-right": ["tray", "bluetooth", "network", "pulseaudio", "custom/weather", "battery", "clock"],
 
 	"hyprland/workspaces": {
 	},
@@ -54,7 +54,7 @@
 		"on-click": "nm-connection-editor",
     },
 
-	"wireplumber": {
+	"pulseaudio": {
 		"format": "{icon}",
 		"format-muted": "",
 		"tooltip": false,
