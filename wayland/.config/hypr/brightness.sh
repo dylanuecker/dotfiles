@@ -8,4 +8,5 @@ fi
 
 brightness=$(brightnessctl | awk '/Current/ { print $4 }' | tr -d "()")
 notify-send "Brightness $brightness" \
-	-t 1500 -h string:x-canonical-private-synchronous:brightness-notification
+	-t 1500 -h string:x-canonical-private-synchronous:brightness-notification \
+	-h int:value:$brightness

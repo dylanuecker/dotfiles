@@ -11,10 +11,11 @@ else
 fi
 
 status=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+volume=$(awk '{printf "%d%%", $2 * 100}' <<< $status)
 if [[ -n $(grep MUTED - <<< $status) ]]; then
-	volume="muted"
+	volume_status="muted"
 else
-	volume=$(awk '{printf "%d%%", $2 * 100}' <<< $status)
+	volume_status=$volume
 fi
 
 if [[ -n $(ps -e | grep spotify) ]]; then
@@ -56,10 +57,11 @@ if [[ -n $(ps -e | grep spotify) ]]; then
 	artist=$(sed 's/&/&amp;/g' <<< $artist)
 	album=$(sed 's/&/&amp;/g' <<< $album)
 
-	notify-send "$track" "$artist - $album\n<span color='#81a2be'>Volume $volume</span> <span color='#e03a3e' weight='bold'>$paused</span>" \
+	notify-send "$track" "$artist - $album\n<span color='#81a2be'>Volume $volume_status</span> <span color='#e03a3e' weight='bold'>$paused</span>" \
 		-t 3000 -h string:x-canonical-private-synchronous:sound-notification \
 		--icon="$icon"
 elif [[ $skip != "true" ]]; then
-	notify-send "Volume $volume" \
-		-t 1500 -h string:x-canonical-private-synchronous:sound-notification
+	notify-send "Volume $volume_status" \
+		-t 1500 -h string:x-canonical-private-synchronous:sound-notification \
+		-h int:value:$volume
 fi
