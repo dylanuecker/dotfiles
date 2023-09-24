@@ -28,22 +28,37 @@ if [[ -n $(ps -e | grep spotify) ]]; then
 
 	sleep .1
 
-	track=$(playerctl metadata --format '{{trunc(title, 20)}}')
-	artistalbum=$(playerctl metadata --format '{{trunc(artist, 20)}} - {{trunc(album, 20)}}')
-    #duration=$(playerctl metadata --format '[{{duration(position)}}/{{duration(mpris:length)}}]')
+	track=$(playerctl metadata --format '{{title}}')
+	artist=$(playerctl metadata --format '{{artist}}')
+	album=$(playerctl metadata --format '{{album}}')
 
-	if [[ "$(playerctl status)" = "Playing" ]]; then
-		#icon_url=$(playerctl metadata | grep artUrl | awk '{ print $3 }')
-		#icon=~/.config/mako/icon
-		#curl $icon_url --output $icon
-		icon=~/.config/mako/play
+	icon_url=$(playerctl metadata | grep artUrl | awk '{ print $3 }')
+	if [[ -n $icon_url ]]; then
+		icon_name=${icon_url##*/}
+		icon=~/.config/mako/cover-cache/$icon_name
+		if [ ! -f $icon ]; then
+			curl $icon_url --output $icon
+		fi
 	else
-		icon=~/.config/mako/paused
+		# local file
+		icon=~/.spotify-local-music/covers/"$album".jpg
 	fi
 
-	notify-send "$track" "$artistalbum\nVolume $volume" \
+	if [[ "$(playerctl status)" = "Paused" ]]; then
+		paused="PAUSED"
+	fi
+
+	if [[ ! -f $icon ]]; then
+		icon=~/.config/mako/default
+	fi
+
+	# fix pango & in body
+	artist=$(sed 's/&/&amp;/g' <<< $artist)
+	album=$(sed 's/&/&amp;/g' <<< $album)
+
+	notify-send "$track" "$artist - $album\n<span color='#81a2be'>Volume $volume</span> <span color='#e03a3e' weight='bold'>$paused</span>" \
 		-t 3000 -h string:x-canonical-private-synchronous:sound-notification \
-		--icon=$icon
+		--icon="$icon"
 elif [[ $skip != "true" ]]; then
 	notify-send "Volume $volume" \
 		-t 1500 -h string:x-canonical-private-synchronous:sound-notification
