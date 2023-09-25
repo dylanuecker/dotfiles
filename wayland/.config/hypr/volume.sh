@@ -20,20 +20,20 @@ fi
 
 if [[ -n $(ps -e | grep spotify) ]]; then
 	if [ $1 = 'previous' ]; then
-		playerctl previous
+		playerctl -p spotify previous
 	elif [ $1 = 'play-pause' ]; then
-		playerctl play-pause
+		playerctl -p spotify play-pause
 	elif [ $1 = 'next' ]; then
-		playerctl next
+		playerctl -p spotify next
 	fi
 
 	sleep .1
 
-	track=$(playerctl metadata --format '{{title}}')
-	artist=$(playerctl metadata --format '{{artist}}')
-	album=$(playerctl metadata --format '{{album}}')
+	track=$(playerctl -p spotify metadata --format '{{title}}')
+	artist=$(playerctl -p spotify metadata --format '{{artist}}')
+	album=$(playerctl -p spotify metadata --format '{{album}}')
 
-	icon_url=$(playerctl metadata | grep artUrl | awk '{ print $3 }')
+	icon_url=$(playerctl -p spotify metadata | grep artUrl | awk '{ print $3 }')
 	if [[ -n $icon_url ]]; then
 		icon_name=${icon_url##*/}
 		icon=~/.config/mako/cover-cache/$icon_name
@@ -45,7 +45,7 @@ if [[ -n $(ps -e | grep spotify) ]]; then
 		icon=~/.spotify-local-music/covers/"$album".jpg
 	fi
 
-	if [[ "$(playerctl status)" = "Paused" ]]; then
+	if [[ "$(playerctl -p spotify status)" = "Paused" ]]; then
 		paused="PAUSED"
 	fi
 
