@@ -3,11 +3,12 @@ image=/home/dylan/.config/lockscreen
 
 hyprctl keyword general:cursor_inactive_timeout 1
 
+grim $image
+
 if [[ "$HOSTNAME" == "cloudbreak" ]]; then
 	hyprctl dispatch dpms off
 fi
 
-grim $image
 convert $image -blur 0x6 $image 
 
 if [[ "$HOSTNAME" == "cloudbreak" ]]; then
