@@ -41,6 +41,7 @@
 	"bluetooth": {
 		"format-on": "󰂯",
 		"format-off": "",
+		"format-connected": "󰂯",
 		"format-disabled": "",
 		"on-click": "blueman-manager",
 		"tooltip": false
