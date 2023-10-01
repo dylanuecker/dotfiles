@@ -66,7 +66,10 @@
     "battery": {
         "format": "<span rise='-1pt'>{capacity}%</span> <span font='16px' rise='-1pt'>{icon}</span>",
         "format-full": "<span font='16px'></span>",
-        "format-icons": ["<span color='#e03a3e'> </span>", "", "", ""],
+        "format-icons": ["", "", "", ""],
+		"states": {
+			"low": 25,
+		},
 		"tooltip": false
     },
 
