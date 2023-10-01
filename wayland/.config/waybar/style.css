@@ -9,17 +9,9 @@
 	margin-right: 5px;
 }
 
-window.DP-1 #custom-weather {
+#custom-weather {
 	margin-left: -4px;
 	margin-right: -2px;
-}
-
-window.eDP-1 #battery {
-	margin-left: -2px;
-}
-
-window.eDP-1 #custom-weather {
-	margin-left: -4px;
 }
 
 window#waybar {
@@ -52,13 +44,8 @@ window#waybar {
     font-size: 16px;
 }
 
-window.DP-1 #bluetooth {
+#bluetooth {
 	font-size: 14px;
-}
-
-window.eDP-1 #bluetooth {
-	font-size: 16px;
-	margin-top: 2px;
 }
 
 #submap,
