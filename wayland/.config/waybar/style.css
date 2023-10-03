@@ -24,6 +24,10 @@ window#waybar {
 	margin-left: 3px;
 }
 
+#battery {
+	margin-right: 2px;
+}
+
 #battery.low {
 	color: #e03a3e
 }
