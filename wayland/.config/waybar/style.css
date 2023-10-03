@@ -20,12 +20,17 @@ window#waybar {
 }
 
 #custom-weather {
-	margin-right: 0px;
 	margin-left: 3px;
+	margin-right: 1px;
 }
 
 #battery {
+	margin-left: 3px;
 	margin-right: 2px;
+}
+
+window.DP-1 #clock {
+	margin-left: 3px;
 }
 
 #battery.low {
