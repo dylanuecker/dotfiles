@@ -16,6 +16,7 @@ set nowrap                  " hate line wrapping
 set clipboard=unnamedplus   " use with +clipboard feature
 set shortmess-=S            " show search count message
 set incsearch               " move cursor to matched string, while typing the search pattern
+set autochdir				" change directory to file
 
 " use jk to enter normal mode from insert mode 
 inoremap jk <ESC>l
