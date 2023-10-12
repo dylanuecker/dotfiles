@@ -29,10 +29,6 @@ window#waybar {
 	margin-right: 2px;
 }
 
-window.DP-1 #clock {
-	margin-left: 3px;
-}
-
 #battery.low {
 	color: #e03a3e
 }
