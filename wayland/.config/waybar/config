@@ -23,7 +23,6 @@
 	"custom/stats": {
 		"exec": "~/.config/waybar/stats.sh",
 		"interval": 10,
-		"on-click": "~/.config/hypr/btop.sh",
 		"tooltip": false
 	},
 
