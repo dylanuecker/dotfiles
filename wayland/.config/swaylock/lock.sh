@@ -17,7 +17,7 @@ convert $imagea -blur 0x6 $imagea
 
 if [[ "$HOSTNAME" == "cloudbreak" ]]; then
 	sleep 0.5; (sleep 0.5; hyprctl dispatch dpms on) &
-	images="--image $imagea"
+	images="--image eDP-1:$imagea"
 else
 	images="--image DP-1:$imagea --image HDMI-A-2:$imageb"
 fi
