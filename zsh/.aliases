@@ -1,0 +1,21 @@
+alias ls='ls --color=auto'
+alias la='ls -A'
+
+alias diff='diff --color=auto'
+
+alias lf='lf -last-dir-path ~/.config/lf/lastdirpath; cd $(head -1 ~/.config/lf/lastdirpath)'
+
+alias ga='git add'
+alias gb='git branch'
+alias gci='git commit'
+alias gcia='git commit -a'
+alias gciam='git commit -a -m'
+alias gcim='git commit -m'
+alias gco='git checkout'
+alias gd='git diff'
+alias gl='git log'
+alias gmv='git mv'
+alias gps='git push'
+alias gpl='git pull'
+alias grm='git rm'
+alias gs='git status'
