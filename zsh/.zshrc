@@ -4,6 +4,12 @@
 source ~/.aliases
 source ~/.env_vars
 
+# Shell configuration local to this machine
+# e.g. export NOVIMSTATUSLINE=-
+if [ -f ~/.lmshrc ]; then
+	source ~/.lmshrc
+fi
+
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
