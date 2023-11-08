@@ -2,6 +2,8 @@
 imagea=/home/dylan/.config/lockscreena
 imageb=/home/dylan/.config/lockscreenb
 
+touch /tmp/screenislocked
+
 hyprctl keyword general:cursor_inactive_timeout 1
 
 if [[ "$HOSTNAME" == "cloudbreak" ]]; then
@@ -22,4 +24,4 @@ else
 	images="--image DP-1:$imagea --image HDMI-A-2:$imageb"
 fi
 
-swaylock $images; hyprctl keyword general:cursor_inactive_timeout 0; killall -SIGUSR2 waybar
+swaylock $images; hyprctl keyword general:cursor_inactive_timeout 0; killall -SIGUSR2 waybar; rm /tmp/screenislocked
