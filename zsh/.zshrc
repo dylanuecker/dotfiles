@@ -4,7 +4,7 @@
 source ~/.aliases
 source ~/.env_vars
 
-# Shell configuration local to this machine
+# shell configuration local to this machine
 # e.g. export NOVIMSTATUSLINE=-
 if [ -f ~/.lmshrc ]; then
 	source ~/.lmshrc
@@ -25,12 +25,9 @@ PROMPT='%B%(?..[%?] )%F{blue}%n@%m%F{white} %~ %#%f%b '
 RPROMPT='%B%F{blue}${vcs_info_msg_0_}%f%b'
 ZLE_RPROMPT_INDENT=0
 
-# bash:
-# 	set -o vi
-# 	bind '"jk":"\el"'
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
-KEYTIMEOUT=10 # 0.1 seconds
+KEYTIMEOUT=20 # 0.2 seconds
 
 HISTFILE="$HOME/.zhistory"
 HISTSIZE=10000
