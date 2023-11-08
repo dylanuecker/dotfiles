@@ -3,6 +3,7 @@ arch:
 
 vm:
 	stow --restow vim zsh
+	scripts/append_bashrc.sh
 
 delete:
 	stow --delete */
