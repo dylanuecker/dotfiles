@@ -1,5 +1,7 @@
 alias ls='ls --color=auto'
-alias la='ls -A'
+alias la='ls --almost-all'
+alias ll='ls -l --human-readable'
+alias lla='ll --almost-all'
 
 alias diff='diff --color=auto'
 
