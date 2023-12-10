@@ -17,10 +17,10 @@ precmd() {
 	vcs_info
 }
 setopt PROMPT_SUBST
-zstyle ':vcs_info:git:*' formats '[%b]'
+zstyle ':vcs_info:git:*' formats '[%40>..>%b%>>] '
 
 PROMPT='%B%(?..[%?] )%F{blue}%n@%m%F{white} %~ %#%f%b '
-RPROMPT='%B%F{blue}${vcs_info_msg_0_}%f%b'
+RPROMPT='%B%F{white}${vcs_info_msg_0_}%F{blue}[%D{%I:%M:%S %P}]%f%b'
 ZLE_RPROMPT_INDENT=0
 
 bindkey -v
