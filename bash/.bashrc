@@ -1,8 +1,8 @@
 source ~/.aliases
 source ~/.env_vars
 
-if [ -f ~/.lmshrc ]; then
-    source ~/.lmshrc
+if [ -f ~/.localrc ]; then
+    source ~/.localrc
 fi
 
 set -o vi

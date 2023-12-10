@@ -4,8 +4,11 @@
 source ~/.aliases
 source ~/.env_vars
 
-if [ -f ~/.lmshrc ]; then
-	source ~/.lmshrc
+# set default prompt colors, can override in .localrc
+PROMPT_PRIMARY=blue
+PROMPT_SECONDARY=white
+if [ -f ~/.localrc ]; then
+	source ~/.localrc
 fi
 
 autoload -Uz compinit
@@ -19,8 +22,8 @@ precmd() {
 setopt PROMPT_SUBST
 zstyle ':vcs_info:git:*' formats '[%40>..>%b%>>] '
 
-PROMPT='%B%(?..[%?] )%F{blue}%n@%m%F{white} %~ %#%f%b '
-RPROMPT='%B%F{white}${vcs_info_msg_0_}%F{blue}[%D{%I:%M:%S %P}]%f%b'
+PROMPT='%B%(?..[%?] )%F{$PROMPT_PRIMARY}%n@%m%F{$PROMPT_SECONDARY} %~ %#%f%b '
+RPROMPT='%B%F{$PROMPT_SECONDARY}${vcs_info_msg_0_}%F{$PROMPT_PRIMARY}[%D{%I:%M:%S %P}]%f%b'
 ZLE_RPROMPT_INDENT=0
 
 bindkey -v

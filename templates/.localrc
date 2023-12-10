@@ -1,0 +1,7 @@
+# vim:syntax=sh filetype=sh
+# shell configuration local to this machine
+
+#PROMPT_PRIMARY=blue
+#PROMPT_SECONDARY=white
+
+#export NOVIMSTATUSLINE=-
