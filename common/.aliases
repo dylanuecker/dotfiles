@@ -5,6 +5,8 @@ alias lla='ll --almost-all'
 
 alias diff='diff --color=auto'
 
+alias grep='grep --color=auto'
+
 alias lf='lf -last-dir-path ~/.config/lf/lastdirpath; cd $(head -1 ~/.config/lf/lastdirpath)'
 
 alias ga='git add'
