@@ -62,9 +62,16 @@ window#waybar {
 	font-size: 14px;
 }
 
+#custom-gamemode,
 #submap,
 #network.disconnected,
 #workspaces button.urgent {
 	font-weight: bold;
     color: #e03a3e;
+}
+
+#custom-gamemode,
+#submap {
+	margin-left: 8px;
+	margin-right: 8px;
 }

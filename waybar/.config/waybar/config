@@ -8,12 +8,18 @@
 
     "spacing": 0,
 
-    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-left": ["hyprland/workspaces", "custom/gamemode", "hyprland/submap"],
     "modules-center": ["custom/stats"],
     "modules-right": ["tray", "bluetooth", "network", "pulseaudio", "custom/weather", "battery", "clock"],
 
 	"hyprland/workspaces": {
 		"all-outputs": true,
+	},
+
+	"custom/gamemode": {
+		"exec": "~/.config/hypr/gamemode.sh output",
+		"interval": "once",
+		"signal": 1
 	},
 
 	"hyprland/submap": {
