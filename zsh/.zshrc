@@ -3,6 +3,7 @@
 
 source ~/.aliases
 source ~/.env_vars
+source ~/.functions
 
 # set default prompt colors, can override in .localrc
 PROMPT_PRIMARY=blue

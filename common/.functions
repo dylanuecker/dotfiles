@@ -1,0 +1,7 @@
+# vim: filetype=sh
+
+# print any todos on current branch
+function todos() {
+    git diff --unified=0 origin..HEAD
+    # TODO
+}

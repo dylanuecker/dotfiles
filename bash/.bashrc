@@ -1,5 +1,6 @@
 source ~/.aliases
 source ~/.env_vars
+source ~/.functions
 
 if [ -f ~/.localrc ]; then
     source ~/.localrc
