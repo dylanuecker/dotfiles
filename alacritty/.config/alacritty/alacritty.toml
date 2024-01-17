@@ -1,3 +1,7 @@
+import = [
+    "~/.config/alacritty/tomorrow_night.toml"
+]
+
 [font]
 size = 13
 
