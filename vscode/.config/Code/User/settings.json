@@ -12,7 +12,7 @@
 
     "window.menuBarVisibility": "toggle", // toggle with alt
     "editor.minimap.enabled": false,
-    "editor.fontFamily": "JetBrains Mono NL Regular",
+    "editor.fontFamily": "JetBrains Mono NL",
     "editor.fontLigatures": false,
-    "editor.fontSize": 15
+    "editor.fontSize": 14,
 }
