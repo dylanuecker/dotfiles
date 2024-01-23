@@ -7,7 +7,7 @@ super + Escape
     pkill -USR1 -x sxhkd
 
 super + shift + semicolon
-    echo "Install something."
+    slock
 
 super + shift + period
     poweroff
@@ -17,7 +17,7 @@ super + shift + comma
 
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 # added a keybind within alacritty for opening a new terminal
 # with the current working directory
@@ -26,9 +26,43 @@ super + Return
 super + space
     firefox
 
-# vscode
-super + v
-    code
+# program launcher
+super + d
+    /home/dylan/.config/rofi/open-rofi drun
+
+# open rofi-power-menu
+super + x
+    /home/dylan/.config/rofi/open-rofi powermenu
+
+# toggle list of active windows in top left
+super + v 
+    polybar-msg action "#xworkspaces.module_toggle"
+
+# ksuperkey? maybe no I like this toggle cause it's like the bookmarks bar for browsers
+super + b
+    /home/dylan/.config/polybar/toggle.sh
+
+super + shift + b 
+    /home/dylan/.config/polybar/toggle-date.sh mdy
+
+super + alt + b 
+    /home/dylan/.config/polybar/toggle-date.sh sec
+
+# control brightness
+XF86MonBrightness{Up,Down}
+    brightnessctl set {+10%,10%-}
+
+XF86AudioMute
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; \
+	polybar-msg action "#volume.hook.0"
+
+XF86Audio{LowerVolume,RaiseVolume}
+	wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; \
+    wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 5%{-,+}; \ 
+    polybar-msg action "#volume.hook.0"
+
+XF86Audio{Prev,Play,Next}
+    playerctl {previous,play-pause,next}
 
 #
 # bspwm hotkeys
@@ -90,6 +124,7 @@ super + {o,i}
 # switch to workspace
 super + {1-9,0}
 	bspc desktop -f '^{1-9,10}'; \
+    /home/dylan/.config/polybar/toggle.sh "No touchie."
 
 # send to workspace
 super + shift + {1-9,0}
