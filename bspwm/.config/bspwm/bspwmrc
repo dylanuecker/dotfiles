@@ -2,17 +2,18 @@
 
 xsetroot -cursor_name left_ptr
 pgrep -x sxhkd > /dev/null || sxhkd &
+vmware-user-suid-wrapper
 
 bspc monitor -d 1 2 3 4 5
 
-bspc config window_gap          5
+bspc config window_gap           5
 
-bspc config border_width 2
-bspc config normal_border_color "#131212"
+bspc config border_width         2
+bspc config normal_border_color  "#131212"
 bspc config focused_border_color "#81a2be"
 
-bspc config automatic_scheme    alternate
+bspc config automatic_scheme     alternate
 
-bspc config single_monocle		true # set to monocle layout if only one window
-bspc config borderless_monocle	true # then won't see the default grey outline for focused window
-bspc config gapless_monocle		true # no capes (gaps)
+bspc config single_monocle		 true # set to monocle layout if only one window
+bspc config borderless_monocle	 true # then won't see the default grey outline for focused window
+bspc config gapless_monocle		 true # no capes (gaps)
