@@ -19,6 +19,11 @@ super + shift + comma
 super + Return
 	kitty
 
+# toggle scratchpad terminal
+super + Tab
+    id=$(cat /tmp/scratchid); \
+    bspc node $id --flag hidden;bspc node -f $id
+
 # added a keybind within alacritty for opening a new terminal
 # with the current working directory
 # super + shift + Return

@@ -17,3 +17,7 @@ bspc config automatic_scheme     alternate
 bspc config single_monocle		 true # set to monocle layout if only one window
 bspc config borderless_monocle	 true # then won't see the default grey outline for focused window
 bspc config gapless_monocle		 true # no capes (gaps)
+
+bspc rule -a scratchpad sticky=on state=floating hidden=on
+# check scratchpad already running
+[ "$(ps -x | grep -c 'scratchpad')" -eq "1" ] && kitty --class scratchpad ~/.config/bspwm/scratch.sh &
