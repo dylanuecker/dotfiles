@@ -68,15 +68,25 @@ alt + {_,shift + }Tab
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+    bspc desktop -f {prev,next}.local; \
+    ~/.config/bspwm/workspace_notification.sh
 
 # switch to workspace
 super + {1-9,0}
-	bspc desktop -f '^{1-9,10}'; \
+    bspc desktop -f '^{1-9,10}'; \
+    ~/.config/bspwm/workspace_notification.sh
 
 # send to workspace
 super + shift + {1-9,0}
 	bspc node -d '^{1-9,10}'
+
+#
+# display information
+#
+
+# display current workspace number and number of (nonhidden) windows
+super + z
+    ~/.config/bspwm/workspace_notification.sh
 
 #
 # rotate
