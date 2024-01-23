@@ -1,0 +1,17 @@
+{
+    "workbench.colorTheme": "Default Dark Modern",
+    "editor.tabSize": 3,
+    "update.mode": "none",
+
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>", "l"]
+        }
+    ],
+
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "JetBrains Mono Regular",
+    "editor.fontLigatures": false,
+    "editor.fontSize": 15
+}
