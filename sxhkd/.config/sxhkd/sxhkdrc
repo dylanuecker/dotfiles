@@ -19,9 +19,14 @@ super + shift + comma
 super + Return
 	kitty
 
-# toggle scratchpad terminal
-super + Tab
-    id=$(cat /tmp/scratchid); \
+# toggle scratchpad terminal one
+super + z
+    id=$(cat /tmp/scratchid1); \
+    bspc node $id --flag hidden;bspc node -f $id
+
+# toggle scratchpad terminal two
+super + x
+    id=$(cat /tmp/scratchid2); \
     bspc node $id --flag hidden;bspc node -f $id
 
 # added a keybind within alacritty for opening a new terminal
@@ -67,14 +72,18 @@ super + {t,p,o,f}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the next/previous window in the current desktop
+# focus the next/previous window in the current workspace
 alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window
 
-# focus the next/previous desktop in the current monitor
+# focus the next/previous workspace in the current monitor
 super + bracket{left,right}
     bspc desktop -f {prev,next}.local; \
     ~/.config/bspwm/workspace_notification.sh
+#
+# send to the next/previous workspace in the current monitor
+super + shift + bracket{left,right}
+	bspc node -d {prev,next}.local
 
 # switch to workspace
 super + {1-9,0}
@@ -90,7 +99,7 @@ super + shift + {1-9,0}
 #
 
 # display current workspace number and number of (nonhidden) windows
-super + z
+super + backslash
     ~/.config/bspwm/workspace_notification.sh
 
 #
@@ -117,7 +126,7 @@ super + ctrl + {1-9}
 super + ctrl + space
 	bspc node -p cancel
 
-# cancel the preselection for the focused desktop
+# cancel the preselection for the focused workspace
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
