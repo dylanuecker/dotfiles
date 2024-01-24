@@ -18,6 +18,10 @@ bspc config single_monocle		 true # set to monocle layout if only one window
 bspc config borderless_monocle	 true # then won't see the default grey outline for focused window
 bspc config gapless_monocle		 true # no capes (gaps)
 
-bspc rule -a scratchpad sticky=on state=floating hidden=on
-# check scratchpad already running
-[ "$(ps -x | grep -c 'scratchpad')" -eq "1" ] && kitty --class scratchpad ~/.config/bspwm/scratch.sh &
+# scratchpad one
+bspc rule -a scratchpad1 sticky=on state=floating hidden=on
+[ "$(ps -x | grep -c 'scratchpad1')" -eq "1" ] && kitty --class scratchpad1 ~/.config/bspwm/scratch.sh 1 &
+
+# scratchpad two
+bspc rule -a scratchpad2 sticky=on state=floating hidden=on
+[ "$(ps -x | grep -c 'scratchpad2')" -eq "1" ] && kitty --class scratchpad2 ~/.config/bspwm/scratch.sh 2 &
