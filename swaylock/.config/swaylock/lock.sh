@@ -2,6 +2,10 @@
 imagea=/home/dylan/.config/lockscreena
 imageb=/home/dylan/.config/lockscreenb
 
+if [ -f /tmp/screenislocked ]; then
+    exit
+fi
+
 touch /tmp/screenislocked
 
 hyprctl keyword general:cursor_inactive_timeout 1
