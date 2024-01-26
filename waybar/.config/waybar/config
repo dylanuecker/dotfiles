@@ -29,7 +29,8 @@
 	"custom/stats": {
 		"exec": "~/.config/waybar/stats.sh",
 		"interval": 10,
-		"tooltip": false
+		"tooltip": false,
+		"signal": 2,
 	},
 
 	"custom/weather": {
