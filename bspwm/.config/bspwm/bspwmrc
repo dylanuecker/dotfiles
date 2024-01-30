@@ -20,8 +20,8 @@ bspc config gapless_monocle		 true # no capes (gaps)
 
 # scratchpad one
 bspc rule -a scratchpad1 sticky=on state=floating hidden=on
-[ "$(ps -x | grep -c 'scratchpad1')" -eq "1" ] && kitty --class scratchpad1 ~/.config/bspwm/scratch.sh 1 &
+~/.config/bspwm/start_scratch.sh 1
 
 # scratchpad two
 bspc rule -a scratchpad2 sticky=on state=floating hidden=on
-[ "$(ps -x | grep -c 'scratchpad2')" -eq "1" ] && kitty --class scratchpad2 ~/.config/bspwm/scratch.sh 2 &
+~/.config/bspwm/start_scratch.sh 2

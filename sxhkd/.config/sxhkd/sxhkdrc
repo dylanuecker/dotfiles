@@ -17,15 +17,19 @@ super + shift + comma
 
 # terminal emulator
 super + Return
+    ~/.config/bspwm/start_scratch.sh 1; \
+    ~/.config/bspwm/start_scratch.sh 2; \
 	kitty
 
 # toggle scratchpad terminal one
 super + z
+    ~/.config/bspwm/start_scratch.sh 1 unhide; \
     id=$(cat /tmp/scratchid1); \
     bspc node $id --flag hidden;bspc node -f $id
 
 # toggle scratchpad terminal two
 super + x
+    ~/.config/bspwm/start_scratch.sh 2 unhide; \
     id=$(cat /tmp/scratchid2); \
     bspc node $id --flag hidden;bspc node -f $id
 
