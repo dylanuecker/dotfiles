@@ -4,33 +4,24 @@ import = [
 
 [font]
 size = 13
+normal      = { family = "JetBrainsMono", style = "Regular" }
+bold        = { family = "JetBrainsMono", style = "Bold" }
+italic      = { family = "JetBrainsMono", style = "Italic" }
+bold_italic = { family = "JetBrainsMono", style = "Bold Italic" }
 
-[font.bold]
-family = "JetBrainsMono"
-
-[font.bold_italic]
-family = "JetBrainsMono"
-
-[font.italic]
-family = "JetBrainsMono"
-
-[font.normal]
-family = "JetBrainsMono"
-
-[[keyboard.bindings]]
-action = "SpawnNewInstance"
-key = "Return"
-mods = "Super|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[13;2u"
-key = "Return"
-mods = "Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[13;5u"
-key = "Return"
-mods = "Control"
+# Bring up vi mode for pager Control+Shift+Space by default
+[keyboard]
+bindings = [
+    { key = "Return", mods = "Super|Shift", action = "SpawnNewInstance" },
+    { key = "Return", mods = "Shift", chars = "\u001B[13;2u" },
+    { key = "Return", mods = "Control", chars = "\u001B[13;5u" },
+    { key = "PageUp", mods = "Control|Shift", action = "ScrollPageUp" },
+    { key = "PageDown", mods = "Control|Shift", action = "ScrollPageDown" },
+    { key = "k", mods = "Control|Shift", action = "ScrollLineUp" },
+    { key = "j", mods = "Control|Shift", action = "ScrollLineDown" },
+    { key = "Home", mods = "Control|Shift", action = "ScrollToTop" },
+    { key = "End", mods = "Control|Shift", action = "ScrollToBottom" },
+]
 
 [window]
 opacity = 0.7
