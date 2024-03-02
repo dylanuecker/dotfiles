@@ -7,7 +7,7 @@ source ~/.functions
 
 # set default prompt colors, can override in .localrc
 PROMPT_PRIMARY=blue
-PROMPT_SECONDARY=white
+PROMPT_SECONDARY=gray
 if [ -f ~/.localrc ]; then
 	source ~/.localrc
 fi
