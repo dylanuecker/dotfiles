@@ -1,17 +1,10 @@
 # vim: filetype=sh
 
-alias ls='ls --color=auto'
-alias la='ls --almost-all'
-alias ll='ls -l --human-readable'
-alias lla='ll --almost-all'
-
-alias diff='diff --color=auto'
-
-alias grep='grep --color=auto'
+alias csearch='grep -rin --include="*."{c,cpp,h,hpp}'
 
 alias dh='dirs -v'
 
-alias lf='lf -last-dir-path ~/.config/lf/lastdirpath; cd $(head -1 ~/.config/lf/lastdirpath)'
+alias diff='diff --color=auto'
 
 alias ga='git add'
 alias gb='git branch'
@@ -28,4 +21,11 @@ alias gpl='git pull'
 alias grm='git rm'
 alias gs='git status'
 
-alias csearch='grep -rin --include="*."{c,cpp,h,hpp}'
+alias grep='grep --color=auto'
+
+alias lf='lf -last-dir-path ~/.config/lf/lastdirpath; cd $(head -1 ~/.config/lf/lastdirpath)'
+
+alias ls='ls --color=auto'
+alias la='ls --almost-all'
+alias ll='ls -l --human-readable'
+alias lla='ll --almost-all'
