@@ -20,6 +20,7 @@ alias gps='git push'
 alias gpl='git pull'
 alias grm='git rm'
 alias gs='git status'
+alias gpr='git remote prune origin'
 
 alias grep='grep --color=auto'
 

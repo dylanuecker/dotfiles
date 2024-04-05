@@ -1,7 +1,11 @@
 # vim: filetype=sh
 
+namedir() {
+    hash -d $1=$PWD
+}
+
 # print any todos on current branch
-function todos() {
+todos() {
     git diff --unified=0 origin..HEAD
     # TODO
 }
