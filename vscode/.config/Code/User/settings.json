@@ -15,4 +15,5 @@
     "editor.fontFamily": "JetBrains Mono NL",
     "editor.fontLigatures": false,
     "editor.fontSize": 14,
+    "extensions.ignoreRecommendations": true,
 }
