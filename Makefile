@@ -1,8 +1,8 @@
 .PHONY: basic arch wayland xorg clean
 
 basic:
-	stow --restow common vim zsh --ignore=".zprofile"
-	cp --no-clobber templates/.* ~ || true
+	stow --restow common nvim vim zsh --ignore=".zprofile"
+	cp --no-clobber --recursive 'templates/.' ~
 
 arch: basic wayland
 	stow --restow alacritty btop git lf zsh
