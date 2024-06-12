@@ -15,6 +15,12 @@ fi
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ''
+# fix list-colors output
+# change selected option foreground
+# blinking cursor on tab?
+setopt GLOB_DOTS
+unsetopt LIST_TYPES
 
 autoload -Uz vcs_info
 precmd() {
