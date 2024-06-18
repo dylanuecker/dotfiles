@@ -1,6 +1,8 @@
 # if not running interactively (e.g. remote file transfer), don't do anything
 [[ $- != *i* ]] && return
 
+test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+
 source ~/.aliases
 source ~/.env_vars
 source ~/.functions
@@ -15,8 +17,12 @@ fi
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
-zstyle ':completion:*' list-colors ''
-# fix list-colors output
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
 # change selected option foreground
 # blinking cursor on tab?
 setopt GLOB_DOTS
