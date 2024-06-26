@@ -1,4 +1,7 @@
 # vim: filetype=sh
+#
+
+alias nv='nvim'
 
 alias csearch='grep -rin --include="*."{c,cpp,h,hpp}'
 
