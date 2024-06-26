@@ -64,3 +64,16 @@ setopt PUSHD_SILENT
 setopt PUSHD_TO_HOME
 setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_MINUS
+
+# exit shell on partial command line
+exit_zsh() { exit }
+zle -N exit_zsh
+bindkey '^D' exit_zsh
+
+# clear backbuffer using Ctrl+L
+clear-screen-and-scrollback() {
+    printf '\x1Bc'
+    zle clear-screen
+}
+zle -N clear-screen-and-scrollback
+bindkey '^L' clear-screen-and-scrollback
