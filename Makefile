@@ -1,17 +1,14 @@
-.PHONY: basic arch wayland xorg clean
+.PHONY: basic arch vm clean
 
 basic:
-	stow --restow common nvim vim zsh --ignore=".zprofile"
+	stow --restow bash common fish nvim tmux vim --ignore=".bash_profile"
 	cp --no-clobber --recursive 'templates/.' ~
 
-arch: basic wayland
-	stow --restow alacritty btop git lf zsh
-
-wayland:
+arch: basic
 	stow --restow hypr mako waybar
 
-xorg:
-	stow --restow bspwm feh i3 picom polybar redshift rofi sxhkd xorg
+vm: basic
+	stow --restow bspwm dunst kitty sxhkd
 
 clean:
 	stow --delete *[^templates]
