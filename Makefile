@@ -1,11 +1,11 @@
 .PHONY: basic arch vm clean
 
 basic:
-	stow --restow bash common fish nvim tmux vim --ignore=".bash_profile"
+	stow --restow bash common fish nvim tmux vim zsh --ignore=".bash_profile|.zprofile"
 	cp --no-clobber --recursive 'templates/.' ~
 
 arch: basic
-	stow --restow hypr mako waybar
+	stow --restow foot hypr mako waybar
 
 vm: basic
 	stow --restow bspwm dunst kitty sxhkd
