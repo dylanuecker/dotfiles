@@ -3,9 +3,8 @@
 
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
-source ~/.aliases
-source ~/.env_vars
-source ~/.functions
+source ~/.alias
+source ~/.env
 
 # set default prompt colors, can override in .localrc
 PROMPT_PRIMARY=blue
