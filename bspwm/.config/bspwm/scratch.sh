@@ -9,4 +9,4 @@ if [ $# -eq 2 ]; then
     bspc node $id --flag hidden
     bspc node -f $id
 fi
-exec $SHELL
+exec fish

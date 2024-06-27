@@ -1,10 +1,12 @@
-# vim: filetype=sh
-
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
     source ~/.alias # TODO turn some of these into abbreviations?
     source ~/.env
+
+    if test -e ~/.localrc
+        source ~/.localrc
+    end
 
     export LESS_TERMCAP_mb=(tput bold; tput setaf 1)                # blinking (red)
     export LESS_TERMCAP_md=(tput bold; tput setaf 2)                # bold (green)
