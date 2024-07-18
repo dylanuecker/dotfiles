@@ -1,0 +1,19 @@
+# vim: filetype=sh
+
+abbr --add nv 'nvim'
+
+abbr --add ga     'git add'
+abbr --add gb     'git branch'
+abbr --add gci    'git commit'
+abbr --add gcia   'git commit -a'
+abbr --add gciam  'git commit -a -m'
+abbr --add gcim   'git commit -m'
+abbr --add gco    'git checkout'
+abbr --add gd     'git diff'
+abbr --add gl     'git log'
+abbr --add gmv    'git mv'
+abbr --add gps    'git push'
+abbr --add gpl    'git pull'
+abbr --add grm    'git rm'
+abbr --add gs     'git status'
+abbr --add gpr    'git remote prune origin'

@@ -5,15 +5,11 @@ alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias ip='ip -color=auto'
 
-alias nv='nvim'
-
 alias la='ls --almost-all'
 alias ll='ls -l --human-readable'
 alias lla='ll --almost-all'
 
-alias csearch='grep -rin --include="*."{c,cpp,h,hpp}'
-
-alias dh='dirs -v'
+alias nv='nvim'
 
 alias ga='git add'
 alias gb='git branch'
