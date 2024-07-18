@@ -1,12 +1,21 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
-    source ~/.alias # TODO turn some of these into abbreviations?
+    source ~/.abbr
     source ~/.env
 
     if test -e ~/.localrc
         source ~/.localrc
     end
+
+    alias diff='diff --color=auto'
+    alias grep='grep --color=auto'
+    alias ls='ls --color=auto'
+    alias ip='ip -color=auto'
+
+    alias la='ls --almost-all'
+    alias ll='ls -l --human-readable'
+    alias lla='ll --almost-all'
 
     export LESS_TERMCAP_mb=(tput bold; tput setaf 1)                # blinking (red)
     export LESS_TERMCAP_md=(tput bold; tput setaf 2)                # bold (green)
@@ -25,14 +34,15 @@ if status is-interactive
     bind -M insert \e\[13\;2u accept-autosuggestion # shift + enter
     bind -M default \e\[13\;2u accept-autosuggestion # shift + enter
 
-    # TODO dirstack? get cd - working
-    # TODO pager color variables
+    set -g fish_greeting
+
+    # cd -/+ like zsh would be nice
+    # dirh/cdh/prevd/nextd
+    # dirs/pushd/popd
+
+    # TODO fix jk between insert and normal
+    # TODO pager (tab completion) color variables
     # TODO LIST_TYPES like option?
-
     # TODO better prompt
-
-    # TODO don't track fish_variables file?
-    #      set everything in here?
-
     # TODO fish color scheme, add function to set it
 end
