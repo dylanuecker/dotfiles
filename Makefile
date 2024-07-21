@@ -6,6 +6,7 @@ basic:
 
 arch: basic
 	stow --restow foot hypr mako waybar
+	sudo stow --restow --no-folding --target=/ arch
 
 vm: basic
 	stow --restow bspwm dunst kitty sxhkd
