@@ -26,7 +26,7 @@ if status is-interactive
     export LESS_TERMCAP_ue=(tput sgr0)                              # end underline (reset all)
 
     fish_vi_key_bindings insert
-    bind -M insert -m default jk cancel repaint-mode
+    bind -M insert -m default jk repaint-mode
     set -g fish_sequence_key_delay_ms 200
 
     fzf_key_bindings
@@ -40,7 +40,6 @@ if status is-interactive
     # dirh/cdh/prevd/nextd
     # dirs/pushd/popd
 
-    # TODO fix jk between insert and normal
     # TODO pager (tab completion) color variables
     # TODO LIST_TYPES like option?
     # TODO better prompt
