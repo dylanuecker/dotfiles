@@ -43,5 +43,4 @@ if status is-interactive
     # TODO pager (tab completion) color variables
     # TODO LIST_TYPES like option?
     # TODO better prompt
-    # TODO fish color scheme, add function to set it
 end
