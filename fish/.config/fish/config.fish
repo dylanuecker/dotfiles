@@ -40,7 +40,12 @@ if status is-interactive
     # dirh/cdh/prevd/nextd
     # dirs/pushd/popd
 
+    set -g __fish_git_prompt_shorten_branch_len 18
+    set -g __fish_git_prompt_shorten_branch_char_suffix
+    # NOTE: there are many more config options
+
     # TODO pager (tab completion) color variables
     # TODO LIST_TYPES like option?
-    # TODO better prompt
+    # TODO clear screen without clearing scrollback buffer, make sure works with tmux
+    # TODO try z or zoxide?
 end
