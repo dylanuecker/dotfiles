@@ -48,4 +48,5 @@ if status is-interactive
     # TODO LIST_TYPES like option?
     # TODO clear screen without clearing scrollback buffer, make sure works with tmux
     # TODO try z or zoxide?
+    # TODO fix blinking cursor before prompt draws
 end
