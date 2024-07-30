@@ -1,5 +1,5 @@
 import = [
-    "~/.config/alacritty/tomorrow_night.toml"
+    "~/.config/alacritty/colorscheme.toml"
 ]
 
 [font]
