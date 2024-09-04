@@ -10,7 +10,7 @@ arch: basic
 	sudo stow --restow --no-folding --target=/ arch
 
 vm: basic
-	stow --restow bspwm dunst kitty sxhkd
+	stow --restow bspwm dunst feh kitty picom sxhkd
 
 clean:
 	stow --delete *[^templates]
