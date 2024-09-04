@@ -28,7 +28,7 @@ bspc rule -a scratchpad1 sticky=on state=floating hidden=on center=true rectangl
 ~/.config/bspwm/start_scratch.sh 1
 
 # scratchpad two
-bspc rule -a scratchpad2 sticky=on state=floating hidden=on center=true rectangle=1500x600+0+0
+bspc rule -a scratchpad2 sticky=on state=floating hidden=on rectangle=1500x600+0+0
 ~/.config/bspwm/start_scratch.sh 2
 
 bspc rule -a rdesktop state=floating center=true rectangle=800x800+0+0
