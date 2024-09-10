@@ -1,5 +1,17 @@
+append_path () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
+
+append_path "$HOME/.local/bin"
+
+unset -f append_path
+
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-	source /home/dylan/.zshrc
 	eval "$(ssh-agent -t 1h)"
 	systemctl --user import-environment SSH_AUTH_SOCK
 	export LIBSEAT_BACKEND=logind

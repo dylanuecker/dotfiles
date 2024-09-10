@@ -1,3 +1,8 @@
+# if not running interactively (e.g. remote file transfer), don't do anything
+[[ $- != *i* ]] && return
+
+test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+
 source ~/.alias
 source ~/.env
 
