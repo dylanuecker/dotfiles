@@ -1,0 +1,23 @@
+# User service for Rclone mounting
+#
+# Place in ~/.config/systemd/user/
+# File must include the '@' (ex rclone@.service)
+# As your normal user, run 
+#   systemctl --user daemon-reload
+# You can now start/enable each remote by using rclone@<remote>
+#   systemctl --user enable --now rclone@gdrive
+
+[Unit]
+Description=rclone: Remote FUSE filesystem for cloud storage config %I
+Documentation=man:rclone(1)
+After=network-online.target
+Wants=network-online.target
+AssertPathIsDirectory="%h/%I"
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/rclone mount "%I:" "%h/%I"
+ExecStop=/bin/fusermount -uz "%h/%I"
+
+[Install]
+WantedBy=default.target

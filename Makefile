@@ -6,7 +6,7 @@ basic:
 	cp --no-clobber --recursive 'templates/.' ~
 
 arch: basic
-	stow --restow foot hypr mako waybar
+	stow --restow foot hypr mako systemd waybar
 	sudo stow --restow --no-folding --target=/ arch
 
 vm: basic
