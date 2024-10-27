@@ -6,10 +6,10 @@ function fish_prompt --description 'Left prompt'
     set -l git_prompt_output (string replace -ra '\(|\)' '' (fish_git_prompt))
 
     printf '%s%s%s%s%s%s%s' \
-        (set_color --bold blue) (prompt_path) \
+        (set_color --bold $PROMPT_PRIMARY) (prompt_path) \
         (set_color --bold brblack) $git_prompt_output \
         $pipestatus_string \
-        (set_color --bold yellow) " > "\
+        (set_color --bold $PROMPT_SECONDARY) " > "\
         (set_color normal)
 end
 

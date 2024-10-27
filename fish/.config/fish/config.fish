@@ -25,6 +25,13 @@ if status is-interactive
     export LESS_TERMCAP_us=(tput smul; tput bold; tput setaf 5)     # underline (purple)
     export LESS_TERMCAP_ue=(tput sgr0)                              # end underline (reset all)
 
+    if not set -q PROMPT_PRIMARY
+        set PROMPT_PRIMARY blue
+    end
+    if not set -q PROMPT_SECONDARY
+        set PROMPT_SECONDARY yellow
+    end
+
     fish_vi_key_bindings insert
     bind -M insert -m default jk repaint-mode
     set -g fish_sequence_key_delay_ms 200
