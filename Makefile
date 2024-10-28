@@ -7,7 +7,8 @@ basic:
 	cp --no-clobber --recursive 'templates/.' ~
 
 arch: basic
-	stow --restow foot hypr mako systemd waybar
+	stow --restow foot hypr mako waybar
+	stow --restow --no-folding --target='$(HOME)/.config/systemd' systemd
 	sudo stow --restow --no-folding --target=/ arch
 
 vm: basic
