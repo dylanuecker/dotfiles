@@ -25,7 +25,7 @@ function set_colorscheme --description 'Set colorscheme'
     set -U fish_color_error red
 
     # ordinary command parameters
-    set -U fish_color_param cyan
+    set -U fish_color_param white
 
     # parameters that are filenames (if the file exists)
     set -U fish_color_valid_path white
