@@ -29,7 +29,7 @@
 
 	"custom/weather": {
 		"exec": "~/.config/waybar/weather.py",
-		"interval": 60,
+		"interval": 600,
 		"tooltip": false
 	},
 
