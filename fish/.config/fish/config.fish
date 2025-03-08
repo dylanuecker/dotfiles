@@ -51,6 +51,13 @@ if status is-interactive
     set -g __fish_git_prompt_shorten_branch_char_suffix
     # NOTE: there are many more config options
 
+    set fish_cursor_default block blink
+    set fish_cursor_external block blink
+    set fish_cursor_insert line blink
+    set fish_cursor_visual block blink
+    set fish_cursor_replace_one underscore blink
+    set fish_cursor_replace underscore blink
+
     # TODO pager (tab completion) color variables
     # TODO LIST_TYPES like option?
     # TODO clear screen without clearing scrollback buffer, make sure works with tmux
