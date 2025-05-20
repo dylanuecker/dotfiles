@@ -2,19 +2,24 @@
     "workbench.colorTheme": "Default Dark Modern",
     "editor.tabSize": 3,
     "update.mode": "none",
-
     "vim.insertModeKeyBindings": [
         {
             "before": ["j", "k"],
             "after": ["<Esc>", "l"]
         }
     ],
-
     "window.menuBarVisibility": "toggle",
     "editor.minimap.enabled": false,
     "editor.fontFamily": "JetBrains Mono NL",
     "editor.fontLigatures": false,
     "editor.fontSize": 14,
     "extensions.ignoreRecommendations": true,
-    "explorer.autoReveal": false
+
+    "explorer.autoReveal": false,
+
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+        "editor.formatOnSave": true,
+    },
+    "editor.inlayHints.enabled": "off",
 }
