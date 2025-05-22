@@ -1,0 +1,21 @@
+{
+	"Include Guard": {
+		"prefix": "guard",
+		"body": [
+			"#ifndef ${TM_FILENAME/([^.]*)\\.(.*)/${1:/upcase}_${2:/upcase}/}",
+			"#define ${TM_FILENAME/([^.]*)\\.(.*)/${1:/upcase}_${2:/upcase}/}",
+			"",
+			"$0",
+			"",
+			"#endif   // ${TM_FILENAME/([^.]*)\\.(.*)/${1:/upcase}_${2:/upcase}/}"
+		],
+		"description": "Insert include guard"
+	},
+	"Header": {
+		"prefix": "header",
+		"body": [
+			"#include \"${TM_FILENAME_BASE}.$0\"",
+		],
+		"description": "Insert header and include statement"
+	}
+}

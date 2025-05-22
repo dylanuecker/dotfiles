@@ -27,4 +27,8 @@
     },
     "editor.inlayHints.enabled": "off",
     "cmake.showOptionsMovedNotification": false,
+    "files.associations": {
+        "*.c": "cpp",
+        "*.h": "cpp"
+    }
 }
