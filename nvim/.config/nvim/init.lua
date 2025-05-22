@@ -31,4 +31,6 @@ set expandtab               " always use spaces
 
 vim.keymap.set("i", "jk", "<Esc>l") -- use jk to enter normal mode from insert mode 
 
+vim.opt.guicursor:append("a:blinkon100")  -- blink cursor
+
 -- TODO keybinds for selecting splits

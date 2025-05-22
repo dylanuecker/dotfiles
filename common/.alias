@@ -9,7 +9,7 @@ alias la='ls --almost-all'
 alias ll='ls -l --human-readable'
 alias lla='ll --almost-all'
 
-alias nv='nvim'
+alias n='nvim'
 
 alias ga='git add'
 alias gb='git branch'

@@ -1,6 +1,6 @@
 # vim: filetype=sh
 
-abbr --add nv 'nvim'
+abbr --add n 'nvim'
 
 abbr --add ga     'git add'
 abbr --add gb     'git branch'
