@@ -4,8 +4,14 @@
     "update.mode": "none",
     "vim.insertModeKeyBindings": [
         {
-            "before": ["j", "k"],
-            "after": ["<Esc>", "l"]
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>",
+                "l"
+            ]
         }
     ],
     "window.menuBarVisibility": "toggle",
@@ -14,12 +20,11 @@
     "editor.fontLigatures": false,
     "editor.fontSize": 14,
     "extensions.ignoreRecommendations": true,
-
     "explorer.autoReveal": false,
-
     "[cpp]": {
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
         "editor.formatOnSave": true,
     },
     "editor.inlayHints.enabled": "off",
+    "cmake.showOptionsMovedNotification": false,
 }
