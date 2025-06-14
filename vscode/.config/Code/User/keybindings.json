@@ -1,0 +1,40 @@
+// Place your key bindings in this file to override the defaults
+[
+   {
+      "key": "ctrl+-",
+      "command": "-workbench.action.zoomOut"
+   },
+   {
+      "key": "ctrl+-",
+      "command": "workbench.action.splitEditorDown",
+      "when": "vim.mode == 'Normal'"
+   },
+   {
+      "key": "ctrl+shift+h",
+      "command": "-workbench.action.replaceInFiles"
+   },
+   {
+      "key": "ctrl+shift+j",
+      "command": "-workbench.action.search.toggleQueryDetails"
+   },
+   {
+      "key": "ctrl+shift+h",
+      "command": "workbench.action.moveActiveEditorGroupLeft",
+      "when": "vim.mode == 'Normal'"
+   },
+   {
+      "key": "ctrl+shift+j",
+      "command": "workbench.action.moveActiveEditorGroupDown",
+      "when": "vim.mode == 'Normal'"
+   },
+   {
+      "key": "ctrl+shift+k",
+      "command": "workbench.action.moveActiveEditorGroupUp",
+      "when": "vim.mode == 'Normal'"
+   },
+   {
+      "key": "ctrl+shift+l",
+      "command": "workbench.action.moveActiveEditorGroupRight",
+      "when": "vim.mode == 'Normal'"
+   }
+]

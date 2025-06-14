@@ -14,11 +14,141 @@
             ]
         }
     ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "commands": [
+                "workbench.action.focusBelowGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>"
+            ],
+            "commands": [
+                "workbench.action.focusAboveGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-S-h>"
+            ],
+            "commands": [
+                "workbench.action.moveActiveEditorGroupLeft"
+            ]
+        },
+        {
+            "before": [
+                "<C-S-j>"
+            ],
+            "commands": [
+                "workbench.action.moveActiveEditorGroupDown"
+            ]
+        },
+        {
+            "before": [
+                "<C-S-k>"
+            ],
+            "commands": [
+                "workbench.action.moveActiveEditorGroupUp"
+            ]
+        },
+        {
+            "before": [
+                "<C-S-l>"
+            ],
+            "commands": [
+                "workbench.action.moveActiveEditorGroupRight"
+            ]
+        },
+        {
+            "before": [
+                "<C-->"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            "before": [
+                "<C-\\>"
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": [
+                "<C-Left>"
+            ],
+            "commands": [
+                "workbench.action.decreaseViewWidth"
+            ]
+        },
+        {
+            "before": [
+                "<C-Right>"
+            ],
+            "commands": [
+                "workbench.action.increaseViewWidth"
+            ]
+        },
+        {
+            "before": [
+                "<C-Up>"
+            ],
+            "commands": [
+                "workbench.action.decreaseViewHeight"
+            ]
+        },
+        {
+            "before": [
+                "<C-Down>"
+            ],
+            "commands": [
+                "workbench.action.increaseViewHeight"
+            ]
+        },
+        {
+            "before": [
+                "<C-=>"
+            ],
+            "commands": [
+                "workbench.action.evenEditorWidths"
+            ]
+        },
+        {
+            "before": [
+                "<C-m>"
+            ],
+            "commands": [
+                "workbench.action.toggleEditorWidths"
+            ]
+        }
+    ],
     "window.menuBarVisibility": "toggle",
     "editor.minimap.enabled": false,
     "editor.fontFamily": "JetBrains Mono NL",
     "editor.fontLigatures": false,
-    "editor.fontSize": 14,
+    "editor.fontSize": 16,
     "extensions.ignoreRecommendations": true,
     "explorer.autoReveal": false,
     "[cpp]": {
