@@ -25,6 +25,46 @@ inoremap jk <ESC>l
 " use shift+enter to prevent comments from continuing on next line
 inoremap <S-CR> <CR><ESC>^Da
 
+" move windows ctrl+hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" swap windows ctrl+HJKL
+nnoremap [72;5u <C-w>H
+nnoremap [74;5u <C-w>J
+nnoremap [75;5u <C-w>K
+nnoremap [76;5u <C-w>L
+
+" resize windows ctrl+arrows
+nnoremap <C-Up> <C-w>5+
+nnoremap <C-Down> <C-w>5-
+nnoremap <C-Left> <C-w>5<
+nnoremap <C-Right> <C-w>5>
+
+" splits ctrl+\-
+nnoremap [45;4u <C-w>s
+nnoremap <C-\> <C-w>v
+
+" set windows to equal sizes ctrl+=
+nnoremap [61;4u <C-w>=
+
+let g:zoom_winrestcmd = ''
+function! ToggleZoom()
+    if g:zoom_winrestcmd == ''
+    let g:zoom_winrestcmd = winrestcmd()
+    resize
+    vertical resize
+  else
+    execute g:zoom_winrestcmd
+    let g:zoom_winrestcmd = ''
+  endif
+endfunction
+
+" zoom window ctrl+mf
+nnoremap <C-m> :call ToggleZoom()<CR>
+
 " remove newbie crutches
 for key in ['<Down>', '<Left>', '<Right>', '<Up>']
     exec 'noremap' key '<Nop>'
