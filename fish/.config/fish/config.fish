@@ -36,7 +36,7 @@ if status is-interactive
     bind -M insert -m default jk repaint-mode
     set -g fish_sequence_key_delay_ms 200
 
-    fzf_key_bindings
+    fzf --fish | source
 
     bind -M insert \e\[13\;2u accept-autosuggestion # shift + enter
     bind -M default \e\[13\;2u accept-autosuggestion # shift + enter
