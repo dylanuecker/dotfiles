@@ -56,6 +56,8 @@ if status is-interactive
 
     zoxide init fish | source
 
+    set_colorscheme
+
     # TODO pager (tab completion) color variables
     # TODO LIST_TYPES like option?
     # TODO clear screen without clearing scrollback buffer, make sure works with tmux
